@@ -66,12 +66,15 @@
           "settings": {
             "title": "About us",
             "title_font_size": "fs-xl",
-            "description": "<p>Finish your Shopify store within days, not months. 15+ years of coding experience, 50k+ customers served!</p>",
-            "btn_primary_text": "Browse themes",
-            "btn_primary_url": "https://www.kondasoft.com/collections/shopify-themes",
+            "show_logo": true,
+            "logo_width": 180,
+            "show_social_icons": true,
+            "description": "<p>Welcome to Lurevo. Discover thoughtful touches for your home and inspiration for everyday living.</p>",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
             "btn_primary_color": "btn-primary",
-            "btn_secondary_text": "Learn more",
-            "btn_secondary_url": "https://www.kondasoft.com/collections/shopify-themes",
+            "btn_secondary_text": "",
+            "btn_secondary_url": "",
             "btn_secondary_color": "btn-light-white"
           }
         }
@@ -91,7 +94,7 @@
         "border_bottom_width": 0,
         "border_color": "border-white",
         "border_opacity": 100,
-        "social_icons": true,
+        "social_icons": false,
         "show_payment_icons": true,
         "show_powered_by": true,
         "pt": 10,

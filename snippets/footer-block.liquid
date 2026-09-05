@@ -1,5 +1,21 @@
 {% case block.type %}
   {% when 'richtext' %}
+    {% if block.settings.show_logo %}
+      {% assign footer_logo = block.settings.logo | default: settings.logo | default: shop.brand.logo %}
+      <a class="footer-about-logo d-inline-block mb-5" href="{{ routes.root_url }}" style="width: {{ block.settings.logo_width | default: 180 }}px; max-width: 100%;">
+        {% if footer_logo != blank %}
+          <img
+            src="{{ footer_logo | image_url: width: 640 }}"
+            alt="{{ shop.name | escape }}"
+            width="{{ footer_logo.width }}"
+            height="{{ footer_logo.height }}"
+            class="img-fluid"
+            loading="lazy">
+        {% else %}
+          <span class="fs-xxl">{{ shop.name | escape }}</span>
+        {% endif %}
+      </a>
+    {% endif %}
     {% unless block.settings.description == blank %}
       <div class="description rte mt-2 mb-6">
         {{ block.settings.description }}
@@ -23,6 +39,11 @@
         {% endunless %}
       </div>
     {% endunless %}
+    {% if block.settings.show_social_icons %}
+      <div class="footer-about-social mt-5">
+        {% render 'social-icons', icon_size: 20, show_title: false %}
+      </div>
+    {% endif %}
   {% when 'menu' %}
     <ul 
       class="nav flex-column mb-0" 

@@ -195,7 +195,7 @@
     {
       "type": "checkbox",
       "id": "social_icons",
-      "label": "Show social icons",
+      "label": "Show social icons in bottom bar",
       "default": true
     },
     {
@@ -257,6 +257,35 @@
           ],
           "default": "fs-lg",
           "info": "Only on desktop"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_logo",
+          "label": "Show store logo",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo",
+          "info": "Leave empty to use the theme or store brand logo. A light logo works best on a dark footer."
+        },
+        {
+          "type": "range",
+          "id": "logo_width",
+          "label": "Logo width",
+          "min": 60,
+          "max": 320,
+          "step": 10,
+          "default": 180,
+          "unit": "px"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social_icons",
+          "label": "Show social icons",
+          "default": false,
+          "info": "Set your account links in Theme settings > Social."
         },
         {
           "type": "richtext",

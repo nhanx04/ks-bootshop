@@ -19,9 +19,10 @@
           href="{{ settings[social_link] }}"
           data-bs-toggle="tooltip"
           data-bs-placement="bottom"
-          title="{{ social }}"
+          title="{{ social_account }}"
           aria-label="{{ social_account }}"
-          target="_blank">
+          target="_blank"
+          rel="noopener noreferrer">
           {% case social_handle %}
             {% when 'facebook' %}
               <svg
