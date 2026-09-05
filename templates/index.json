@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_carousel_CmDneU": {
@@ -6,31 +15,27 @@
         "slide_Q4UPQq": {
           "type": "slide",
           "settings": {
-            "img_mobile": "shopify:\/\/shop_images\/lifestyle-1-mobile.jpg",
-            "img_desktop": "shopify:\/\/shop_images\/lifestyle-1.jpg",
             "overlay_color": "#000000",
             "overlay_opacity": 10,
             "overlay_blur": 2,
             "subtitle": "Developed by KondaSoft",
             "title": "Welcome to KS BootShop Theme",
-            "description": "<p>Free Shopify Theme inspired by simplicity and elegance.<\/p>",
+            "description": "<p>Free Shopify Theme inspired by simplicity and elegance.</p>",
             "btn_primary_text": "Get theme",
-            "btn_primary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-themes\/products\/ks-bootshop",
+            "btn_primary_url": "https://www.kondasoft.com/collections/shopify-themes/products/ks-bootshop",
             "btn_secondary_text": "Learn more",
-            "btn_secondary_url": "https:\/\/www.kondasoft.com\/collections\/shopify-themes\/products\/ks-bootshop"
+            "btn_secondary_url": "https://www.kondasoft.com/collections/shopify-themes/products/ks-bootshop"
           }
         },
         "slide_TddqxQ": {
           "type": "slide",
           "settings": {
-            "img_mobile": "shopify:\/\/shop_images\/lifestyle-2-mobile.jpg",
-            "img_desktop": "shopify:\/\/shop_images\/lifestyle-2.jpg",
             "overlay_color": "#000000",
             "overlay_opacity": 10,
             "overlay_blur": 2,
             "subtitle": "Developed by KondaSoft",
             "title": "Simple to Use, Easy to Customize",
-            "description": "<p>Free Shopify Theme inspired by simplicity and elegance.<\/p>",
+            "description": "<p>Free Shopify Theme inspired by simplicity and elegance.</p>",
             "btn_primary_text": "Primary button",
             "btn_primary_url": "",
             "btn_secondary_text": "Secondary button",
@@ -92,7 +97,7 @@
         "recommended_mode_intent": "related",
         "header_title": "Featured Products",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -123,7 +128,7 @@
         "text_align": "text-center",
         "title": "Richtext",
         "title_font_size": "h3",
-        "description": "<p>Add on optional description for this section<\/p>",
+        "description": "<p>Add on optional description for this section</p>",
         "description_font_size": "fs-md",
         "btn_primary_text": "Primary button",
         "btn_primary_url": "",
@@ -151,7 +156,7 @@
         "text_align": "text-center",
         "title": "Richtext",
         "title_font_size": "h2",
-        "description": "<p>Add on optional description for this section<\/p>",
+        "description": "<p>Add on optional description for this section</p>",
         "description_font_size": "fs-md",
         "btn_primary_text": "Primary button",
         "btn_primary_url": "",
@@ -229,7 +234,7 @@
         "container_max_width": "",
         "header_title": "Featured Collections",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -282,7 +287,6 @@
             "media_align_desktop": "",
             "media_border": "img-thumbnail",
             "img_orientation": "ratio-9x16",
-            "video": "",
             "video_ratio": "adapt",
             "video_autoplay": true,
             "video_loop": true,
@@ -294,7 +298,7 @@
             "subtitle": "Optional Subtitle",
             "title": "Media with text",
             "title_font_size": "h3",
-            "description": "<p>Either show an image, video (MP4) or an external video (YouTube). If no text block is shown, the media will take full section's space.<\/p>",
+            "description": "<p>Either show an image, video (MP4) or an external video (YouTube). If no text block is shown, the media will take full section's space.</p>",
             "description_font_size": "fs-md",
             "btn_primary_text": "Primary button",
             "btn_primary_url": "",
@@ -321,7 +325,7 @@
           "type": "item",
           "settings": {
             "title": "First Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.<\/p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
             "btn_text": "Learn more",
             "btn_url": ""
           }
@@ -330,7 +334,7 @@
           "type": "item",
           "settings": {
             "title": "Second Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.<\/p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
             "btn_text": "Learn more",
             "btn_url": ""
           }
@@ -339,7 +343,7 @@
           "type": "item",
           "settings": {
             "title": "Third Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.<\/p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
             "btn_text": "Learn more",
             "btn_url": ""
           }
@@ -348,7 +352,7 @@
           "type": "item",
           "settings": {
             "title": "Fourth Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.<\/p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
             "btn_text": "Learn more",
             "btn_url": ""
           }
@@ -357,7 +361,7 @@
           "type": "item",
           "settings": {
             "title": "Fifth Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.<\/p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
             "btn_text": "Learn more",
             "btn_url": ""
           }
@@ -366,7 +370,7 @@
           "type": "item",
           "settings": {
             "title": "Sixth Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.<\/p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
             "btn_text": "Learn more",
             "btn_url": ""
           }
@@ -392,7 +396,7 @@
         "container_max_width": "",
         "header_title": "Card Slider",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -424,7 +428,7 @@
     "html_Y7Cp8x": {
       "type": "html",
       "settings": {
-        "liquid": "<p class=\"alert alert-primary text-center\">Current datetime is: <b>{{ \"now\" | date: \"%Y-%m-%d %H:%M\" }}<\/b><\/p>\n\n<iframe class=\"rounded\" src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d5458.176837636101!2d7.264440042281333!3d43.69609386612476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cddaa162b4a50b%3A0x77566707bed909ce!2sFontaine%20du%20Soleil!5e0!3m2!1sen!2s!4v1651756644654!5m2!1sen!2s\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+        "liquid": "<p class=\"alert alert-primary text-center\">Current datetime is: <b>{{ \"now\" | date: \"%Y-%m-%d %H:%M\" }}</b></p>\n\n<iframe class=\"rounded\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5458.176837636101!2d7.264440042281333!3d43.69609386612476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cddaa162b4a50b%3A0x77566707bed909ce!2sFontaine%20du%20Soleil!5e0!3m2!1sen!2s!4v1651756644654!5m2!1sen!2s\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
         "bg_color": "bg-body",
         "bg_opacity": 100,
         "bg_gradient": "",
@@ -438,7 +442,7 @@
         "text_align": "text-center",
         "header_title": "HTML and Liquid",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "fs-md",
         "pt": 10,
         "pb": 10
@@ -451,42 +455,42 @@
           "type": "item",
           "settings": {
             "title": "Where do you ship?",
-            "description": "<p>We ship all around the world... Please provide here you own shipping information, including times, prices, options etc.<\/p>"
+            "description": "<p>We ship all around the world... Please provide here you own shipping information, including times, prices, options etc.</p>"
           }
         },
         "item_EemRD3": {
           "type": "item",
           "settings": {
             "title": "How long will it take to receive my order",
-            "description": "<p>This depends on whether it is an International or a Domestic order. All orders within the U.S. are considered domestic orders and they are shipped and delivered within 2-5 business days. Please see International Orders for more details.<\/p>"
+            "description": "<p>This depends on whether it is an International or a Domestic order. All orders within the U.S. are considered domestic orders and they are shipped and delivered within 2-5 business days. Please see International Orders for more details.</p>"
           }
         },
         "item_jyLYkB": {
           "type": "item",
           "settings": {
             "title": "What payment methods do you support?",
-            "description": "<p>We accept PayPal, Visa, MasterCard, Discover, and American Express but feel free to contact us for other payment options.<\/p>"
+            "description": "<p>We accept PayPal, Visa, MasterCard, Discover, and American Express but feel free to contact us for other payment options.</p>"
           }
         },
         "item_pHCJRG": {
           "type": "item",
           "settings": {
             "title": "How can I track my order?",
-            "description": "<p>We will send tracking information to the e-mail address associated with your order once the item has shipped. If you have not received your tracking information and it has been over 2 business day, please contact us at (012) 123 - 4567<\/p>"
+            "description": "<p>We will send tracking information to the e-mail address associated with your order once the item has shipped. If you have not received your tracking information and it has been over 2 business day, please contact us at (012) 123 - 4567</p>"
           }
         },
         "item_kWLWrb": {
           "type": "item",
           "settings": {
             "title": "Can I order as a gift for someone else?",
-            "description": "<p>When ordering as a gift for someone, be sure to enter in your email address to receive all summary information but enter in the recipient’s name and shipping information. We will be sure to keep all prices and receipts out of the package.<\/p>"
+            "description": "<p>When ordering as a gift for someone, be sure to enter in your email address to receive all summary information but enter in the recipient’s name and shipping information. We will be sure to keep all prices and receipts out of the package.</p>"
           }
         },
         "item_dizKmG": {
           "type": "item",
           "settings": {
             "title": "How can I get a refund for my order?",
-            "description": "<p>If for any reason you are not completely satisfied with your purchase, within 30 days of placing your order, we will refund you for your purchase with no questions asked.<\/p>"
+            "description": "<p>If for any reason you are not completely satisfied with your purchase, within 30 days of placing your order, we will refund you for your purchase with no questions asked.</p>"
           }
         }
       },
@@ -511,7 +515,7 @@
         "open_first_item": true,
         "header_title": "FAQs",
         "header_title_font_size": "h2",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "fs-md",
         "pt": 2,
         "pb": 11
@@ -524,8 +528,7 @@
           "type": "item",
           "settings": {
             "title": "First Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"<\/p>",
-            "img": "shopify:\/\/shop_images\/icon-user.svg",
+            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
             "author": "Author's Name",
             "author_subtitle": "Verified Customer"
           }
@@ -534,8 +537,7 @@
           "type": "item",
           "settings": {
             "title": "Second Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"<\/p>",
-            "img": "shopify:\/\/shop_images\/icon-user.svg",
+            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
             "author": "Author's Name",
             "author_subtitle": "Verified Customer"
           }
@@ -544,8 +546,7 @@
           "type": "item",
           "settings": {
             "title": "Third Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"<\/p>",
-            "img": "shopify:\/\/shop_images\/icon-user.svg",
+            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
             "author": "Author's Name",
             "author_subtitle": "Verified Customer"
           }
@@ -554,8 +555,7 @@
           "type": "item",
           "settings": {
             "title": "Fourth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"<\/p>",
-            "img": "shopify:\/\/shop_images\/icon-user.svg",
+            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
             "author": "Author's Name",
             "author_subtitle": "Verified Customer"
           }
@@ -564,8 +564,7 @@
           "type": "item",
           "settings": {
             "title": "Fifth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"<\/p>",
-            "img": "shopify:\/\/shop_images\/icon-user.svg",
+            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
             "author": "Author's Name",
             "author_subtitle": "Verified Customer"
           }
@@ -574,8 +573,7 @@
           "type": "item",
           "settings": {
             "title": "Sixth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"<\/p>",
-            "img": "shopify:\/\/shop_images\/icon-user.svg",
+            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
             "author": "Author's Name",
             "author_subtitle": "Verified Customer"
           }
@@ -601,7 +599,7 @@
         "container_max_width": "",
         "header_title": "Testimonials",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -642,7 +640,7 @@
         "container_max_width": "",
         "header_title": "Latest Posts",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Add on optional description for this section</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
