@@ -5,7 +5,7 @@
         {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
         {{ 'collection-' | append: current | placeholder_svg_tag: 'img-thumbnail mb-4' }}
         <h3 class="article-card-title mb-0 fs-xl">
-          Article title {{ current }}
+          Gift idea {{ current }}
         </h3>
       </div>
     </div>
@@ -183,7 +183,7 @@
       "type": "text",
       "id": "header_title",
       "label": "Title",
-      "default": "Latest Posts"
+      "default": "Gift Guides and Inspiration"
     },
     {
       "type": "select",
@@ -203,7 +203,7 @@
       "type": "richtext",
       "id": "header_description",
       "label": "Description (optional)",
-      "default": "<p>Add on optional description for this section</p>"
+      "default": "<p>Ideas for choosing photos, wording, and occasions that make a personalized whiskey set feel unforgettable.</p>"
     },
     {
       "type": "select",

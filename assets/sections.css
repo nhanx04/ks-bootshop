@@ -376,6 +376,33 @@ body.navbar-dropdown-open #footer-group::after {
   border-bottom-style: solid;
 }
 
+.card-slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.card-slider .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.card-slider .card {
+  width: 100%;
+  min-height: 250px;
+}
+
+.card-slider .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-slider .card .description {
+  flex: 1 1 auto;
+}
+
+.card-slider .card .btn {
+  margin-top: auto !important;
+}
+
 
 /*
   HTML/Liquid

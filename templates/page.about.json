@@ -19,11 +19,11 @@
             "overlay_color": "#000000",
             "overlay_opacity": 30,
             "overlay_blur": 5,
-            "subtitle": "Optional Subtitle",
-            "title": "Welcome to our store",
-            "description": "<p>An optional description for this page<\/p>",
-            "btn_primary_text": "",
-            "btn_primary_url": "",
+            "subtitle": "Personalized Home Bar Gifts",
+            "title": "We Turn Meaningful Moments Into Custom Decanter Sets",
+            "description": "<p>Our store helps customers create thoughtful whiskey gifts with photos, names, dates, messages, and designs made for the person behind the celebration.<\/p>",
+            "btn_primary_text": "Shop All Sets",
+            "btn_primary_url": "\/collections\/all",
             "btn_secondary_text": "",
             "btn_secondary_url": ""
           }
@@ -102,40 +102,40 @@
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/product-1_baca2f7d-a8b0-4db2-aa52-c4074f562b1d.jpg",
-            "title": "John Doe",
-            "description": "<p>CEO & Founder<\/p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Personal Designs",
+            "description": "<p>Every set starts with the details that make the gift feel unmistakably theirs.<\/p>",
+            "btn_text": "Shop Designs",
+            "btn_url": "\/collections\/all"
           }
         },
         "template--15889379819659__54fb0ae0-8c55-432c-8b0a-1211e6ba4a0e-item-2": {
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/product-5_4bfb97ab-4193-4461-a4e3-6e06d63b8249.jpg",
-            "title": "Jane Doe",
-            "description": "<p>Marketing<\/p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Gift-Ready Moments",
+            "description": "<p>Created for birthdays, weddings, anniversaries, retirements, holidays, and family milestones.<\/p>",
+            "btn_text": "Gift Ideas",
+            "btn_url": "\/collections\/hobbie-gift"
           }
         },
         "template--15889379819659__54fb0ae0-8c55-432c-8b0a-1211e6ba4a0e-item-4": {
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/product-3.jpg",
-            "title": "Jim Doe",
-            "description": "<p>Sales<\/p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Photo Keepsakes",
+            "description": "<p>Use a favorite portrait, couple photo, pet photo, or family memory as the center of the design.<\/p>",
+            "btn_text": "Photo Sets",
+            "btn_url": "\/collections\/printed-set"
           }
         },
         "template--15889379819659__54fb0ae0-8c55-432c-8b0a-1211e6ba4a0e-item-3": {
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/product-2_51119e0e-dd95-4bc4-85bc-2db1278575ad.jpg",
-            "title": "Jill Doe",
-            "description": "<p>Developer<\/p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Support Before Ordering",
+            "description": "<p>Need help with wording, photo choice, or layout direction? Send us your idea before checkout.<\/p>",
+            "btn_text": "Contact Us",
+            "btn_url": "\/pages\/contact-us"
           }
         }
       },
@@ -155,9 +155,9 @@
         "border_color": "border-body",
         "border_opacity": 100,
         "container_max_width": "",
-        "header_title": "Our Team",
+        "header_title": "What Makes Our Gifts Different",
         "header_title_font_size": "h2",
-        "header_description": "<p>Add on optional description for this section<\/p>",
+        "header_description": "<p>Each section below can use your own images later: engraving close-ups, packaging shots, finished sets, or customer gift moments.<\/p>",
         "header_description_font_size": "fs-md",
         "item_bg_color": "bg-body",
         "item_bg_opacity": 100,
@@ -192,12 +192,12 @@
         "border_opacity": 100,
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "Want to get in touch?!",
+        "title": "Have a Design Idea in Mind?",
         "title_font_size": "h3",
-        "description": "<p>Please contact us anytime from Monday to Friday<\/p>",
+        "description": "<p>Tell us who the gift is for and what you want to include. We will help you choose the right personalized decanter set.<\/p>",
         "description_font_size": "",
         "btn_primary_text": "Contact us",
-        "btn_primary_url": "shopify:\/\/pages\/contact-us",
+        "btn_primary_url": "\/pages\/contact-us",
         "btn_primary_color": "btn-outline-primary",
         "btn_secondary_text": "",
         "btn_secondary_url": "",

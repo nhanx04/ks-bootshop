@@ -100,7 +100,7 @@
       "remove_all": "Remove all"
     },
     "newsletter": {
-      "input_label": "Enter your email address...",
+      "input_label": "Enter your email for gift ideas...",
       "confirmation_text": "Thanks for subscribing, you'll hear from us soon.",
       "submit_button": "Subscribe"
     },

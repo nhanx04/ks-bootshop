@@ -18,13 +18,13 @@
             "overlay_color": "#000000",
             "overlay_opacity": 10,
             "overlay_blur": 2,
-            "subtitle": "Developed by KondaSoft",
-            "title": "Welcome to KS BootShop Theme",
-            "description": "<p>Free Shopify Theme inspired by simplicity and elegance.</p>",
-            "btn_primary_text": "Get theme",
-            "btn_primary_url": "https://www.kondasoft.com/collections/shopify-themes/products/ks-bootshop",
-            "btn_secondary_text": "Learn more",
-            "btn_secondary_url": "https://www.kondasoft.com/collections/shopify-themes/products/ks-bootshop"
+            "subtitle": "Personalized Whiskey Gifts",
+            "title": "Custom Engraved Decanter Sets Made for Their Story",
+            "description": "<p>Turn a favorite photo, name, badge, family moment, or inside joke into a keepsake decanter set they will actually use and proudly display.</p>",
+            "btn_primary_text": "Shop Best Sellers",
+            "btn_primary_url": "/collections/latest",
+            "btn_secondary_text": "Design Your Gift",
+            "btn_secondary_url": "/collections/all"
           }
         },
         "slide_TddqxQ": {
@@ -33,13 +33,13 @@
             "overlay_color": "#000000",
             "overlay_opacity": 10,
             "overlay_blur": 2,
-            "subtitle": "Developed by KondaSoft",
-            "title": "Simple to Use, Easy to Customize",
-            "description": "<p>Free Shopify Theme inspired by simplicity and elegance.</p>",
-            "btn_primary_text": "Primary button",
-            "btn_primary_url": "",
-            "btn_secondary_text": "Secondary button",
-            "btn_secondary_url": ""
+            "subtitle": "From Photo to Keepsake",
+            "title": "A Gift That Feels Personal Before the First Pour",
+            "description": "<p>Choose a design, upload the details, and we create a polished whiskey set ready for birthdays, weddings, retirements, anniversaries, and family milestones.</p>",
+            "btn_primary_text": "Browse Gift Ideas",
+            "btn_primary_url": "/collections/all",
+            "btn_secondary_text": "Contact Us",
+            "btn_secondary_url": "/pages/contact-us"
           }
         }
       },
@@ -108,9 +108,9 @@
         "limit": 8,
         "recommended_mode": true,
         "recommended_mode_intent": "related",
-        "header_title": "Featured Products",
+        "header_title": "Best-Selling Personalized Sets",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>Customer favorites for photo engraving, family gifts, couple keepsakes, and profession-inspired whiskey sets.</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -139,15 +139,15 @@
         "border_opacity": 100,
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "Richtext",
+        "title": "Make Every Glass Tell a Story",
         "title_font_size": "h3",
-        "description": "<p>Add on optional description for this section</p>",
+        "description": "<p>Upload a meaningful photo or choose a design theme, then personalize it with names, dates, titles, or a short message. We turn it into a premium decanter set that feels one-of-a-kind from the moment it is unboxed.</p>",
         "description_font_size": "fs-md",
-        "btn_primary_text": "Primary button",
-        "btn_primary_url": "",
+        "btn_primary_text": "Start Shopping",
+        "btn_primary_url": "/collections/all",
         "btn_primary_color": "btn-primary",
-        "btn_secondary_text": "Secondary button",
-        "btn_secondary_url": "",
+        "btn_secondary_text": "See Gift Collections",
+        "btn_secondary_url": "/collections/engraved-set",
         "btn_secondary_color": "btn-secondary",
         "pt": 12,
         "pb": 12
@@ -167,15 +167,15 @@
         "border_opacity": 100,
         "container_max_width": "900",
         "text_align": "text-center",
-        "title": "Richtext",
+        "title": "Ready to Create a Gift They Will Keep?",
         "title_font_size": "h2",
-        "description": "<p>Add on optional description for this section</p>",
+        "description": "<p>Browse the full collection and find a personalized decanter set that matches the story, occasion, and person you are celebrating.</p>",
         "description_font_size": "fs-md",
-        "btn_primary_text": "Primary button",
-        "btn_primary_url": "",
+        "btn_primary_text": "Shop All Sets",
+        "btn_primary_url": "/collections/all",
         "btn_primary_color": "btn-white",
-        "btn_secondary_text": "Secondary button",
-        "btn_secondary_url": "",
+        "btn_secondary_text": "Contact Us",
+        "btn_secondary_url": "/pages/contact-us",
         "btn_secondary_color": "btn-light-white",
         "pt": 11,
         "pb": 11
@@ -245,9 +245,9 @@
         "border_color": "border-body",
         "border_opacity": 10,
         "container_max_width": "",
-        "header_title": "Featured Collections",
+        "header_title": "Shop by Gift Moment",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>Find the right personalized decanter set by recipient, hobby, career, or engraving style.</p>",
         "header_description_font_size": "",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -309,16 +309,16 @@
             "external_video": "",
             "text_align_mobile": "text-center",
             "text_align_desktop": "text-desktop-start",
-            "subtitle": "Optional Subtitle",
-            "title": "Media with text",
+            "subtitle": "Crafted Around Your Details",
+            "title": "Designed to Look Thoughtful, Not Generic",
             "title_font_size": "h3",
-            "description": "<p>Either show an image, video (MP4) or an external video (YouTube). If no text block is shown, the media will take full section's space.</p>",
+            "description": "<p>Your photo, names, dates, and message become the center of the design. Use this image area for a close-up of the engraving process, a before-and-after mockup, or a finished set in gift packaging.</p>",
             "description_font_size": "fs-md",
-            "btn_primary_text": "Primary button",
-            "btn_primary_url": "",
+            "btn_primary_text": "Shop Engraved Sets",
+            "btn_primary_url": "/collections/engraved-set",
             "btn_primary_color": "btn-primary",
-            "btn_secondary_text": "Secondary button",
-            "btn_secondary_url": "",
+            "btn_secondary_text": "Ask About a Design",
+            "btn_secondary_url": "/pages/contact-us",
             "btn_secondary_color": "btn-outline-primary",
             "pt": 10,
             "pb": 10
@@ -338,55 +338,55 @@
         "item_qp7jPa": {
           "type": "item",
           "settings": {
-            "title": "First Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Upload Your Photo",
+            "description": "<p>Pick a product and send the photo, names, dates, or short message you want engraved on the decanter and glasses.</p>",
+            "btn_text": "Choose a Set",
+            "btn_url": "/collections/all"
           }
         },
         "item_h9wANh": {
           "type": "item",
           "settings": {
-            "title": "Second Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Personalize the Design",
+            "description": "<p>Select a style for a couple, baby, family, best friend, career, hobby, pet, or military-inspired gift.</p>",
+            "btn_text": "View Collections",
+            "btn_url": "/collections/all"
           }
         },
         "item_hAPJWn": {
           "type": "item",
           "settings": {
-            "title": "Third Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "We Prepare Your Keepsake",
+            "description": "<p>Your details are arranged cleanly so the final set feels balanced, premium, and ready to give.</p>",
+            "btn_text": "Shop Photo Sets",
+            "btn_url": "/collections/printed-set"
           }
         },
         "item_9EkHYL": {
           "type": "item",
           "settings": {
-            "title": "Fourth Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Gift It With Confidence",
+            "description": "<p>A personalized whiskey set makes a strong gift for birthdays, weddings, anniversaries, retirements, and holidays.</p>",
+            "btn_text": "Find a Gift",
+            "btn_url": "/collections/hobbie-gift"
           }
         },
         "item_iKKgHJ": {
           "type": "item",
           "settings": {
-            "title": "Fifth Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Made for Family Moments",
+            "description": "<p>Add family names, dates, portraits, or a message that turns a decanter set into a lasting home bar centerpiece.</p>",
+            "btn_text": "Family Gifts",
+            "btn_url": "/collections/gift-for-family"
           }
         },
         "item_Je3xNm": {
           "type": "item",
           "settings": {
-            "title": "Sixth Card",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa velit, sagittis nec pharetra id, iaculis non sapien.</p>",
-            "btn_text": "Learn more",
-            "btn_url": ""
+            "title": "Questions Before Ordering?",
+            "description": "<p>Need help choosing the right photo, layout, or wording? Send us your idea and we will point you to the best option.</p>",
+            "btn_text": "Contact Us",
+            "btn_url": "/pages/contact-us"
           }
         }
       },
@@ -408,9 +408,9 @@
         "border_color": "border-body",
         "border_opacity": 100,
         "container_max_width": "",
-        "header_title": "Card Slider",
+        "header_title": "How Personalization Works",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>A simple path from choosing a gift to creating a decanter set that feels made just for them.</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -442,7 +442,7 @@
     "html_Y7Cp8x": {
       "type": "html",
       "settings": {
-        "liquid": "<p class=\"alert alert-primary text-center\">Current datetime is: <b>{{ \"now\" | date: \"%Y-%m-%d %H:%M\" }}</b></p>\n\n<iframe class=\"rounded\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5458.176837636101!2d7.264440042281333!3d43.69609386612476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cddaa162b4a50b%3A0x77566707bed909ce!2sFontaine%20du%20Soleil!5e0!3m2!1sen!2s!4v1651756644654!5m2!1sen!2s\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "liquid": "<div class=\"row g-5 text-start\"><div class=\"col-md-4\"><h3 class=\"h5\">1. Choose a design</h3><p>Start with the gift style that fits your recipient: couple, family, career, hobby, pet, baby, or best friend.</p></div><div class=\"col-md-4\"><h3 class=\"h5\">2. Send the details</h3><p>Add the photo, names, dates, title, or short message you want included in the engraving or print.</p></div><div class=\"col-md-4\"><h3 class=\"h5\">3. Give a lasting gift</h3><p>The finished decanter set arrives ready to become a personal home bar centerpiece.</p></div></div><div class=\"mt-6\"><a class=\"btn btn-primary\" href=\"/collections/all\">Shop All Personalized Sets</a> <a class=\"btn btn-outline-primary ms-2\" href=\"/pages/contact-us\">Need Help?</a></div><iframe class=\"rounded mt-6\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.6033756313464!2d-82.01056202511694!3d26.565006774947697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db38709fd8c64b%3A0xbca36517e9f3e19!2s4626%20SW%2016th%20Pl%2C%20Cape%20Coral%2C%20FL%2033914%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1788751752217!5m2!1svi!2s\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>",
         "bg_color": "bg-body",
         "bg_opacity": 100,
         "bg_gradient": "",
@@ -454,9 +454,9 @@
         "container": "container",
         "container_max_width": "",
         "text_align": "text-center",
-        "header_title": "HTML and Liquid",
+        "header_title": "From Idea to Gift-Ready Set",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>Use this section image area later for process photos, packaging photos, or a short personalization preview.</p>",
         "header_description_font_size": "fs-md",
         "pt": 10,
         "pb": 10
@@ -468,43 +468,43 @@
         "item_AgKJ3m": {
           "type": "item",
           "settings": {
-            "title": "Where do you ship?",
-            "description": "<p>We ship all around the world... Please provide here you own shipping information, including times, prices, options etc.</p>"
+            "title": "Can I use my own photo?",
+            "description": "<p>Yes. Choose a product and send the photo you want personalized. Clear, well-lit photos with visible faces or details usually create the best result.</p>"
           }
         },
         "item_EemRD3": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to receive my order",
-            "description": "<p>This depends on whether it is an International or a Domestic order. All orders within the U.S. are considered domestic orders and they are shipped and delivered within 2-5 business days. Please see International Orders for more details.</p>"
+            "title": "What can I personalize?",
+            "description": "<p>Depending on the design, you can personalize photos, names, dates, titles, short messages, badges, career themes, family details, pet portraits, or hobby artwork.</p>"
           }
         },
         "item_jyLYkB": {
           "type": "item",
           "settings": {
-            "title": "What payment methods do you support?",
-            "description": "<p>We accept PayPal, Visa, MasterCard, Discover, and American Express but feel free to contact us for other payment options.</p>"
+            "title": "Is this a good gift for special occasions?",
+            "description": "<p>Absolutely. These sets are designed for birthdays, weddings, anniversaries, retirements, Father's Day, Christmas, housewarmings, and milestone celebrations.</p>"
           }
         },
         "item_pHCJRG": {
           "type": "item",
           "settings": {
-            "title": "How can I track my order?",
-            "description": "<p>We will send tracking information to the e-mail address associated with your order once the item has shipped. If you have not received your tracking information and it has been over 2 business day, please contact us at (012) 123 - 4567</p>"
+            "title": "How do I place an order?",
+            "description": "<p>Pick the set you like, add your personalization details, then complete checkout. If you are unsure about the best design, contact us before ordering.</p>"
           }
         },
         "item_kWLWrb": {
           "type": "item",
           "settings": {
-            "title": "Can I order as a gift for someone else?",
-            "description": "<p>When ordering as a gift for someone, be sure to enter in your email address to receive all summary information but enter in the recipient’s name and shipping information. We will be sure to keep all prices and receipts out of the package.</p>"
+            "title": "Can I send it directly as a gift?",
+            "description": "<p>Yes. Enter the recipient's shipping address at checkout. Use your own email so you receive the order updates and tracking information.</p>"
           }
         },
         "item_dizKmG": {
           "type": "item",
           "settings": {
-            "title": "How can I get a refund for my order?",
-            "description": "<p>If for any reason you are not completely satisfied with your purchase, within 30 days of placing your order, we will refund you for your purchase with no questions asked.</p>"
+            "title": "What if I need help choosing a photo?",
+            "description": "<p>Send us a message with your idea and we can help you choose the right product, photo, wording, and design direction before you order.</p>"
           }
         }
       },
@@ -529,7 +529,7 @@
         "open_first_item": true,
         "header_title": "FAQs",
         "header_title_font_size": "h2",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>Quick answers for ordering a personalized decanter set with confidence.</p>",
         "header_description_font_size": "fs-md",
         "pt": 2,
         "pb": 11
@@ -652,9 +652,9 @@
         "border_color": "border-body",
         "border_opacity": 100,
         "container_max_width": "",
-        "header_title": "Latest Posts",
+        "header_title": "Gift Guides and Inspiration",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>Ideas for choosing photos, wording, and occasions that make a personalized whiskey set feel unforgettable.</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
