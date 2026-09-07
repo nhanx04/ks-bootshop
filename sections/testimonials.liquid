@@ -50,6 +50,11 @@
                 --bs-bg-opacity: {{ section.settings.card_bg_opacity | append: '%' }};
                 --bs-border-opacity: {{ section.settings.card_border_opacity | append: '%' }};
               ">
+              {% unless block.settings.customer_photo == blank %}
+                <div class="testimonials-card-photo">
+                  {% render 'image-url', img: block.settings.customer_photo, size: 600, scale: true, orientation: 'ratio-4x3', class: 'card-img-top' %}
+                </div>
+              {% endunless %}
               <div class="card-body">
                 {% unless block.settings.title == blank %}
                   <h3 class="title mb-2 {{ section.settings.card_title_font_size }}">
@@ -508,8 +513,14 @@
         },
         {
           "type": "image_picker",
+          "id": "customer_photo",
+          "label": "Customer review photo",
+          "info": "Optional. Add a product/lifestyle photo from the customer for this review."
+        },
+        {
+          "type": "image_picker",
           "id": "img",
-          "label": "Image"
+          "label": "Author image"
         },
         {
           "type": "text",
@@ -536,42 +547,42 @@
           "type": "item",
           "settings": {
             "title": "First Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>"
+            "description": "<p>\"Ordered this for my husband's 40th birthday and it turned out better than I expected. The engraving was clean, the box looked gift-ready, and he actually opened it in front of everyone because he liked it so much.\"</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "title": "Second Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>"
+            "description": "<p>\"I was a little nervous about ordering something personalized online, but the preview matched what arrived. Shipping updates were clear and the decanter feels heavier and nicer than the photos showed.\"</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "title": "Third Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>"
+            "description": "<p>\"Bought the police design for my dad after his retirement. He noticed the small details right away. It felt personal without being cheesy, which is exactly what I wanted.\"</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "title": "Fourth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>"
+            "description": "<p>\"Customer service helped me fix a spelling mistake before production. That alone saved the gift. The finished set arrived packed well and my brother uses the glasses every weekend.\"</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "title": "Fifth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>"
+            "description": "<p>\"The family decanter set made our anniversary dinner feel extra special. The names were centered nicely and the wood box made it look much more expensive than it was.\"</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "title": "Sixth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>"
+            "description": "<p>\"Sent this directly to my best friend, so I only saw photos after she opened it. Everything looked clean and classy, and she said it was one of the most thoughtful gifts she received.\"</p>"
           }
         }
       ]

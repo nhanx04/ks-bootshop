@@ -37,12 +37,38 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "0f9016c8-7819-40d8-a874-905df26582ca": {
+          "type": "richtext",
+          "settings": {
+            "title": "",
+            "title_font_size": "fs-sm",
+            "show_logo": true,
+            "logo": "shopify://shop_images/logo-white.png",
+            "logo_width": 220,
+            "show_social_icons": true,
+            "description": "<p>Welcome to Lurevo. </p>",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_primary_color": "btn-primary",
+            "btn_secondary_text": "",
+            "btn_secondary_url": "",
+            "btn_secondary_color": "btn-light-white"
+          }
+        },
+        "menu_pptMzM": {
+          "type": "menu",
+          "settings": {
+            "menu": "footer-collection",
+            "title_font_size": "fs-lg",
+            "title": "Collections"
+          }
+        },
         "menu_iWU8Gr": {
           "type": "menu",
           "settings": {
-            "menu": "",
+            "menu": "footer-blogs",
             "title_font_size": "fs-lg",
-            "title": "Block Title"
+            "title": "Blogs"
           }
         },
         "79b0b9d4-1bf4-4490-a48e-94be1aecf12a": {
@@ -60,30 +86,14 @@
             "title_font_size": "fs-xl",
             "title": "Policies"
           }
-        },
-        "0f9016c8-7819-40d8-a874-905df26582ca": {
-          "type": "richtext",
-          "settings": {
-            "title": "About us",
-            "title_font_size": "fs-xl",
-            "show_logo": true,
-            "logo_width": 180,
-            "show_social_icons": true,
-            "description": "<p>Welcome to Lurevo. Discover thoughtful touches for your home and inspiration for everyday living.</p>",
-            "btn_primary_text": "",
-            "btn_primary_url": "",
-            "btn_primary_color": "btn-primary",
-            "btn_secondary_text": "",
-            "btn_secondary_url": "",
-            "btn_secondary_color": "btn-light-white"
-          }
         }
       },
       "block_order": [
+        "0f9016c8-7819-40d8-a874-905df26582ca",
+        "menu_pptMzM",
         "menu_iWU8Gr",
         "79b0b9d4-1bf4-4490-a48e-94be1aecf12a",
-        "7468602d-7e94-4bd5-9673-02b2f8269581",
-        "0f9016c8-7819-40d8-a874-905df26582ca"
+        "7468602d-7e94-4bd5-9673-02b2f8269581"
       ],
       "settings": {
         "bg_color": "bg-secondary",

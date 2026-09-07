@@ -15,7 +15,7 @@
         "bg_color": "bg-primary",
         "bg_opacity": 10,
         "bg_gradient": "",
-        "text_color": "text-white",
+        "text_color": "text-primary",
         "border_top_width": 0,
         "border_bottom_width": 0,
         "border_color": "border-body",
@@ -23,15 +23,15 @@
         "container_max_width": "600",
         "img_show": true,
         "img_overlay_color": "#000000",
-        "img_overlay_opacity": 30,
+        "img_overlay_opacity": 20,
         "img_overlay_blur": 0,
         "title_font_size": "h2",
         "description_show": true,
         "description_font_size": "fs-md",
-        "pt": 12,
-        "pb": 12,
-        "pt_desktop": 14,
-        "pb_desktop": 14
+        "pt": 9,
+        "pb": 9,
+        "pt_desktop": 9,
+        "pb_desktop": 9
       }
     },
     "collection_products_Fx3hb6": {

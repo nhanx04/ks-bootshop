@@ -90,7 +90,20 @@
         "border_color": "border-primary",
         "border_opacity": 100,
         "container_max_width": "",
-        "products": [],
+        "products": [
+          "baby-decanter-set",
+          "bestie-decanter-set",
+          "couple-decanter-set",
+          "doctor-decanter-set",
+          "engraved-family-decanter-set",
+          "fire-fighter-decanter-set",
+          "grand-parent-decanter-set",
+          "uv-print-milatary-decanter-set",
+          "uv-print-hooker-decanter-set",
+          "pet-decanter-set",
+          "police-decanter-set",
+          "whiskey-ang-cigar-decanter-set"
+        ],
         "collection": "latest",
         "limit": 8,
         "recommended_mode": true,
@@ -174,42 +187,42 @@
         "collection_rznnLq": {
           "type": "collection",
           "settings": {
-            "collection": "men",
+            "collection": "printed-set",
             "title": ""
           }
         },
         "collection_KdHXk9": {
           "type": "collection",
           "settings": {
-            "collection": "women",
+            "collection": "hobbie-gift",
             "title": ""
           }
         },
         "collection_b7ELCB": {
           "type": "collection",
           "settings": {
-            "collection": "children",
+            "collection": "gift-for-family",
             "title": ""
           }
         },
         "collection_XRMXNt": {
           "type": "collection",
           "settings": {
-            "collection": "babies",
+            "collection": "engraved-set",
             "title": ""
           }
         },
         "collection_fQ9QDf": {
           "type": "collection",
           "settings": {
-            "collection": "latest",
+            "collection": "career-gift",
             "title": ""
           }
         },
         "collection_kRQqkR": {
           "type": "collection",
           "settings": {
-            "collection": "sale",
+            "collection": "engraved-set",
             "title": ""
           }
         }
@@ -286,6 +299,7 @@
             "border_opacity": 10,
             "media_align_desktop": "",
             "media_border": "img-thumbnail",
+            "img": "shopify://shop_images/61c7561f-fc9d-4604-b46d-b7d557540dae.png",
             "img_orientation": "ratio-9x16",
             "video_ratio": "adapt",
             "video_autoplay": true,
@@ -527,54 +541,54 @@
         "item_B99dNi": {
           "type": "item",
           "settings": {
-            "title": "First Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
-            "author": "Author's Name",
+            "title": "Perfect 40th birthday gift",
+            "description": "<p>\"Ordered this for my husband's 40th birthday and it turned out better than I expected. The engraving was clean, the box looked gift-ready, and he actually opened it in front of everyone because he liked it so much.\"</p>",
+            "author": "Amanda R.",
             "author_subtitle": "Verified Customer"
           }
         },
         "item_VPnR9Q": {
           "type": "item",
           "settings": {
-            "title": "Second Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
-            "author": "Author's Name",
+            "title": "Better than the photos",
+            "description": "<p>\"I was a little nervous about ordering something personalized online, but the preview matched what arrived. Shipping updates were clear and the decanter feels heavier and nicer than the photos showed.\"</p>",
+            "author": "Michael T.",
             "author_subtitle": "Verified Customer"
           }
         },
         "item_XTUtYy": {
           "type": "item",
           "settings": {
-            "title": "Third Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
-            "author": "Author's Name",
+            "title": "My dad loved the details",
+            "description": "<p>\"Bought the police design for my dad after his retirement. He noticed the small details right away. It felt personal without being cheesy, which is exactly what I wanted.\"</p>",
+            "author": "Jessica M.",
             "author_subtitle": "Verified Customer"
           }
         },
         "item_79nB3i": {
           "type": "item",
           "settings": {
-            "title": "Fourth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
-            "author": "Author's Name",
+            "title": "Helpful before production",
+            "description": "<p>\"Customer service helped me fix a spelling mistake before production. That alone saved the gift. The finished set arrived packed well and my brother uses the glasses every weekend.\"</p>",
+            "author": "Daniel K.",
             "author_subtitle": "Verified Customer"
           }
         },
         "item_BUkPE7": {
           "type": "item",
           "settings": {
-            "title": "Fifth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
-            "author": "Author's Name",
+            "title": "Looked expensive",
+            "description": "<p>\"The family decanter set made our anniversary dinner feel extra special. The names were centered nicely and the wood box made it look much more expensive than it was.\"</p>",
+            "author": "Rachel S.",
             "author_subtitle": "Verified Customer"
           }
         },
         "item_DtBFNc": {
           "type": "item",
           "settings": {
-            "title": "Sixth Testimonial",
-            "description": "<p>\"Shopping at [Store Name] has been an absolute delight! The carefully curated selection of products is a testament to the store's commitment to quality. From trendy fashion pieces to unique home decor items, every product exudes style and craftsmanship.\"</p>",
-            "author": "Author's Name",
+            "title": "Easy long-distance gift",
+            "description": "<p>\"Sent this directly to my best friend, so I only saw photos after she opened it. Everything looked clean and classy, and she said it was one of the most thoughtful gifts she received.\"</p>",
+            "author": "Nicole B.",
             "author_subtitle": "Verified Customer"
           }
         }
@@ -597,9 +611,9 @@
         "border_color": "border-primary",
         "border_opacity": 100,
         "container_max_width": "",
-        "header_title": "Testimonials",
+        "header_title": "Customer Reviews",
         "header_title_font_size": "h3",
-        "header_description": "<p>Add on optional description for this section</p>",
+        "header_description": "<p>Real feedback from customers who ordered personalized decanter sets as gifts.</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
