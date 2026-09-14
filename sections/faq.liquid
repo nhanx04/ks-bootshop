@@ -18,9 +18,33 @@
   <div 
     class="container" 
     style="max-width: {{ section.settings.container_max_width }}px">
-    <div class="row align-items-center">
+    <div class="row align-items-stretch">
       <div class="col-desktop-8">
-        {% render 'section-header' %}
+        {% if section.settings.show_faq_image %}
+          <div class="faq-image-frame">
+            {% if section.settings.faq_image != blank %}
+              <img
+                src="{{ section.settings.faq_image | image_url: width: 2400 }}"
+                srcset="
+                  {{ section.settings.faq_image | image_url: width: 800 }} 800w,
+                  {{ section.settings.faq_image | image_url: width: 1200 }} 1200w,
+                  {{ section.settings.faq_image | image_url: width: 1800 }} 1800w,
+                  {{ section.settings.faq_image | image_url: width: 2400 }} 2400w"
+                sizes="(max-width: 1199px) 100vw, 44.444vw"
+                alt="{{ section.settings.faq_image.alt | default: section.settings.header_title | escape }}"
+                width="{{ section.settings.faq_image.width }}"
+                height="{{ section.settings.faq_image.height }}"
+                loading="lazy"
+                decoding="async">
+            {% else %}
+              <div class="faq-image-placeholder">
+                <span>Upload your FAQ image in the Theme Editor</span>
+              </div>
+            {% endif %}
+          </div>
+        {% else %}
+          {% render 'section-header' %}
+        {% endif %}
       </div>
       <div class="col-desktop-10">
         <div 
@@ -100,6 +124,17 @@
   "name": "FAQs",
   "tag": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_faq_image",
+      "label": "Use image instead of FAQ heading",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_image",
+      "label": "FAQ image"
+    },
     {
       "type": "header",
       "content": "Styling"

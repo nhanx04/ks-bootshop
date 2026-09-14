@@ -187,7 +187,7 @@
           "type": "liquid",
           "disabled": true,
           "settings": {
-            "liquid": "<p class=\"bg-primary text-white rounded p-5\">Need help before ordering? <a class=\"text-white\" href=\"/pages/contact-us\">Contact us with your gift idea.</a></p>",
+            "liquid": "<p class=\"bg-primary text-white rounded p-5\">Need help before ordering? <a class=\"text-white\" href=\"/pages/contact\">Contact us with your gift idea.</a></p>",
             "pt": 3,
             "pb": 3
           }

@@ -187,10 +187,11 @@ body.navbar-dropdown-open #footer-group::after {
 
 .hero-carousel .media-wrapper img,
 .hero-carousel .media-wrapper video {
-  display: flex;
+  display: block;
   width: 100%;
-  object-fit: cover;
-  max-height: 100vh;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
 }
 
 .hero-carousel .media-wrapper {
@@ -234,6 +235,79 @@ body.navbar-dropdown-open #footer-group::after {
 .hero-carousel .carousel-caption .btn-wrapper {
   animation: fade_in_up 0.5s ease-out both;
   animation-delay: 1s;
+}
+
+/*
+  Process image section
+*/
+.process-image-frame {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  line-height: 0;
+}
+
+.process-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.process-image-placeholder {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border: 2px dashed rgba(var(--text-color-rgb, 33, 37, 41), 0.3);
+  border-radius: 0.5rem;
+  color: rgba(var(--text-color-rgb, 33, 37, 41), 0.7);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/*
+  FAQ image column
+*/
+.faq-image-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: rgba(var(--text-color-rgb, 33, 37, 41), 0.03);
+}
+
+.faq-image-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.faq-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border: 2px dashed rgba(var(--text-color-rgb, 33, 37, 41), 0.3);
+  border-radius: 0.5rem;
+  color: rgba(var(--text-color-rgb, 33, 37, 41), 0.7);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 599.98px) {
+  .faq-image-frame,
+  .faq-image-frame img {
+    height: auto;
+    min-height: 0;
+  }
+
+  .faq-image-placeholder {
+    min-height: 220px;
+  }
 }
 
 
@@ -374,6 +448,76 @@ body.navbar-dropdown-open #footer-group::after {
   display: block;
   border-top-style: solid;
   border-bottom-style: solid;
+}
+
+.contact-social {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(var(--text-color-rgb, 33, 37, 41), 0.12);
+}
+
+.contact-social-title {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(var(--text-color-rgb, 33, 37, 41), 0.18);
+  border-radius: 0.4rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-social-link:hover {
+  border-color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.06);
+}
+
+/*
+  Legal pages
+*/
+.legal-page {
+  border-top: 1px solid rgba(var(--text-color-rgb, 33, 37, 41), 0.08);
+  border-bottom: 1px solid rgba(var(--text-color-rgb, 33, 37, 41), 0.08);
+}
+
+.legal-page-container {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.legal-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-page-content h1 {
+  margin-bottom: 0.75rem;
+}
+
+.legal-page-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.legal-page-content li + li {
+  margin-top: 0.5rem;
+}
+
+.legal-updated {
+  color: rgba(var(--text-color-rgb, 33, 37, 41), 0.65);
+  font-size: 0.95rem;
 }
 
 .card-slider .swiper-wrapper {

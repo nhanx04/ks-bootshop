@@ -96,6 +96,24 @@
               {{ 'general.contact_form.send' | t }}
           </button>
         {% endform %}
+
+        {% if settings.social_instagram != blank and settings.social_instagram != '#' or settings.social_facebook != blank and settings.social_facebook != '#' %}
+          <div class="contact-social mt-7">
+            <p class="contact-social-title">Prefer social media?</p>
+            <div class="contact-social-links">
+              {% if settings.social_instagram != blank and settings.social_instagram != '#' %}
+                <a class="contact-social-link" href="{{ settings.social_instagram }}" target="_blank" rel="noopener noreferrer">
+                  <span>Instagram</span>
+                </a>
+              {% endif %}
+              {% if settings.social_facebook != blank and settings.social_facebook != '#' %}
+                <a class="contact-social-link" href="{{ settings.social_facebook }}" target="_blank" rel="noopener noreferrer">
+                  <span>Facebook</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>

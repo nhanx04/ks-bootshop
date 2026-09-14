@@ -12,8 +12,26 @@
     "hero_carousel_CmDneU": {
       "type": "hero-carousel",
       "blocks": {
+        "slide_TddqxQ": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify://shop_images/Noi_dung_doan_van_ban_cua_ban_2.png",
+            "img_desktop": "shopify://shop_images/Noi_dung_doan_van_ban_cua_ban_dc531105-50ac-4d2b-a550-77d9980541c4.png",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_blur": 0,
+            "subtitle": "",
+            "title": "",
+            "description": "",
+            "btn_primary_text": "Browse Gift Ideas",
+            "btn_primary_url": "/collections/all",
+            "btn_secondary_text": "Contact Us",
+            "btn_secondary_url": "shopify://policies/contact-information"
+          }
+        },
         "slide_Q4UPQq": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "overlay_color": "#000000",
             "overlay_opacity": 10,
@@ -26,26 +44,11 @@
             "btn_secondary_text": "Design Your Gift",
             "btn_secondary_url": "/collections/all"
           }
-        },
-        "slide_TddqxQ": {
-          "type": "slide",
-          "settings": {
-            "overlay_color": "#000000",
-            "overlay_opacity": 10,
-            "overlay_blur": 2,
-            "subtitle": "From Photo to Keepsake",
-            "title": "A Gift That Feels Personal Before the First Pour",
-            "description": "<p>Choose a design, upload the details, and we create a polished whiskey set ready for birthdays, weddings, retirements, anniversaries, and family milestones.</p>",
-            "btn_primary_text": "Browse Gift Ideas",
-            "btn_primary_url": "/collections/all",
-            "btn_secondary_text": "Contact Us",
-            "btn_secondary_url": "/pages/contact-us"
-          }
         }
       },
       "block_order": [
-        "slide_Q4UPQq",
-        "slide_TddqxQ"
+        "slide_TddqxQ",
+        "slide_Q4UPQq"
       ],
       "settings": {
         "bg_color": "bg-body",
@@ -58,14 +61,14 @@
         "border_opacity": 100,
         "carousel_controls": true,
         "carousel_indicators": true,
-        "carousel_transition": "slide",
+        "carousel_transition": "slide carousel-fade",
         "carousel_transition_duration": 500,
-        "carousel_autoplay": 5,
-        "carousel_effect": "carousel-zoom-in",
+        "carousel_autoplay": 0,
+        "carousel_effect": "",
         "media_mobile_height": 500,
-        "media_desktop_height": 700,
-        "media_adapt": false,
-        "media_full": true,
+        "media_desktop_height": 400,
+        "media_adapt": true,
+        "media_full": false,
         "caption_max_width": "900",
         "caption_position": "carousel-caption-center",
         "subtitle_font_size": "fs-md",
@@ -110,7 +113,7 @@
         "recommended_mode_intent": "related",
         "header_title": "Best-Selling Personalized Sets",
         "header_title_font_size": "h3",
-        "header_description": "<p>Customer favorites for photo engraving, family gifts, couple keepsakes, and profession-inspired whiskey sets.</p>",
+        "header_description": "",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -128,6 +131,7 @@
     },
     "richtext_4miPYL": {
       "type": "richtext",
+      "disabled": true,
       "settings": {
         "bg_color": "bg-primary",
         "bg_opacity": 5,
@@ -175,7 +179,7 @@
         "btn_primary_url": "/collections/all",
         "btn_primary_color": "btn-white",
         "btn_secondary_text": "Contact Us",
-        "btn_secondary_url": "/pages/contact-us",
+        "btn_secondary_url": "/pages/contact",
         "btn_secondary_color": "btn-light-white",
         "pt": 11,
         "pb": 11
@@ -188,6 +192,7 @@
           "type": "collection",
           "settings": {
             "collection": "printed-set",
+            "img": "shopify://shop_images/c5154aa7-c679-4398-ab03-3e874444a20f.png",
             "title": ""
           }
         },
@@ -195,6 +200,7 @@
           "type": "collection",
           "settings": {
             "collection": "hobbie-gift",
+            "img": "shopify://shop_images/851a527c-a61c-4ab4-a9ac-c9da754e6bac.png",
             "title": ""
           }
         },
@@ -202,6 +208,7 @@
           "type": "collection",
           "settings": {
             "collection": "gift-for-family",
+            "img": "shopify://shop_images/1a14c27b-136f-49de-a679-b46e3044dce3.png",
             "title": ""
           }
         },
@@ -209,6 +216,7 @@
           "type": "collection",
           "settings": {
             "collection": "engraved-set",
+            "img": "shopify://shop_images/e864a308-9cdb-4fe1-ad1e-24af67b04590.png",
             "title": ""
           }
         },
@@ -216,6 +224,7 @@
           "type": "collection",
           "settings": {
             "collection": "career-gift",
+            "img": "shopify://shop_images/f359b176-6afa-4b19-bda7-c1811ed64e12.png",
             "title": ""
           }
         },
@@ -223,6 +232,7 @@
           "type": "collection",
           "settings": {
             "collection": "engraved-set",
+            "img": "shopify://shop_images/74896dba-12e7-46b5-886a-387bc241c64f.png",
             "title": ""
           }
         }
@@ -247,7 +257,7 @@
         "container_max_width": "",
         "header_title": "Shop by Gift Moment",
         "header_title_font_size": "h3",
-        "header_description": "<p>Find the right personalized decanter set by recipient, hobby, career, or engraving style.</p>",
+        "header_description": "",
         "header_description_font_size": "",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -309,7 +319,7 @@
             "external_video": "",
             "text_align_mobile": "text-center",
             "text_align_desktop": "text-desktop-start",
-            "subtitle": "Crafted Around Your Details",
+            "subtitle": "",
             "title": "Designed to Look Thoughtful, Not Generic",
             "title_font_size": "h3",
             "description": "<p>Your photo, names, dates, and message become the center of the design. Use this image area for a close-up of the engraving process, a before-and-after mockup, or a finished set in gift packaging.</p>",
@@ -318,7 +328,7 @@
             "btn_primary_url": "/collections/engraved-set",
             "btn_primary_color": "btn-primary",
             "btn_secondary_text": "Ask About a Design",
-            "btn_secondary_url": "/pages/contact-us",
+            "btn_secondary_url": "/pages/contact",
             "btn_secondary_color": "btn-outline-primary",
             "pt": 10,
             "pb": 10
@@ -386,7 +396,7 @@
             "title": "Questions Before Ordering?",
             "description": "<p>Need help choosing the right photo, layout, or wording? Send us your idea and we will point you to the best option.</p>",
             "btn_text": "Contact Us",
-            "btn_url": "/pages/contact-us"
+            "btn_url": "/pages/contact"
           }
         }
       },
@@ -410,7 +420,7 @@
         "container_max_width": "",
         "header_title": "How Personalization Works",
         "header_title_font_size": "h3",
-        "header_description": "<p>A simple path from choosing a gift to creating a decanter set that feels made just for them.</p>",
+        "header_description": "",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -442,7 +452,9 @@
     "html_Y7Cp8x": {
       "type": "html",
       "settings": {
-        "liquid": "<div class=\"row g-5 text-start\"><div class=\"col-md-4\"><h3 class=\"h5\">1. Choose a design</h3><p>Start with the gift style that fits your recipient: couple, family, career, hobby, pet, baby, or best friend.</p></div><div class=\"col-md-4\"><h3 class=\"h5\">2. Send the details</h3><p>Add the photo, names, dates, title, or short message you want included in the engraving or print.</p></div><div class=\"col-md-4\"><h3 class=\"h5\">3. Give a lasting gift</h3><p>The finished decanter set arrives ready to become a personal home bar centerpiece.</p></div></div><div class=\"mt-6\"><a class=\"btn btn-primary\" href=\"/collections/all\">Shop All Personalized Sets</a> <a class=\"btn btn-outline-primary ms-2\" href=\"/pages/contact-us\">Need Help?</a></div><iframe class=\"rounded mt-6\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.6033756313464!2d-82.01056202511694!3d26.565006774947697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db38709fd8c64b%3A0xbca36517e9f3e19!2s4626%20SW%2016th%20Pl%2C%20Cape%20Coral%2C%20FL%2033914%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1788751752217!5m2!1svi!2s\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>",
+        "liquid": "",
+        "show_process_image": true,
+        "process_image": "shopify://shop_images/hero_1d15002b-4b85-4f07-9c4d-89e1886fd730.png",
         "bg_color": "bg-body",
         "bg_opacity": 100,
         "bg_gradient": "",
@@ -454,11 +466,11 @@
         "container": "container",
         "container_max_width": "",
         "text_align": "text-center",
-        "header_title": "From Idea to Gift-Ready Set",
+        "header_title": "",
         "header_title_font_size": "h3",
-        "header_description": "<p>Use this section image area later for process photos, packaging photos, or a short personalization preview.</p>",
+        "header_description": "",
         "header_description_font_size": "fs-md",
-        "pt": 10,
+        "pt": 0,
         "pb": 10
       }
     },
@@ -517,6 +529,8 @@
         "item_dizKmG"
       ],
       "settings": {
+        "show_faq_image": true,
+        "faq_image": "shopify://shop_images/Noi_dung_doan_van_ban_cua_ban_1_c418c544-4876-489e-9974-532abdba5860.png",
         "bg_color": "bg-body",
         "bg_opacity": 100,
         "bg_gradient": "",
@@ -544,6 +558,7 @@
             "title": "Perfect 40th birthday gift",
             "description": "<p>\"Ordered this for my husband's 40th birthday and it turned out better than I expected. The engraving was clean, the box looked gift-ready, and he actually opened it in front of everyone because he liked it so much.\"</p>",
             "customer_photo": "shopify://shop_images/iap_640x640.8171522772_9o5a7kz5.webp",
+            "img": "shopify://shop_images/iusa_400x400.78638155_fful.webp",
             "author": "Amanda R.",
             "author_subtitle": "Verified Customer"
           }
@@ -554,6 +569,7 @@
             "title": "Better than the photos",
             "description": "<p>\"I was a little nervous about ordering something personalized online, but the preview matched what arrived. Shipping updates were clear and the decanter feels heavier and nicer than the photos showed.\"</p>",
             "customer_photo": "shopify://shop_images/iap_600x600.8240278404_mxubdkrt.webp",
+            "img": "shopify://shop_images/iap_600x600.8007326902_7qzlptlv.webp",
             "author": "Michael T.",
             "author_subtitle": "Verified Customer"
           }
@@ -564,6 +580,7 @@
             "title": "My dad loved the details",
             "description": "<p>\"Bought the police design for my dad after his retirement. He noticed the small details right away. It felt personal without being cheesy, which is exactly what I wanted.\"</p>",
             "customer_photo": "shopify://shop_images/iap_800x800.7287736470_s01qyz5i.webp",
+            "img": "shopify://shop_images/screenshot_1788685564.png",
             "author": "Jessica M.",
             "author_subtitle": "Verified Customer"
           }
@@ -574,6 +591,7 @@
             "title": "Helpful before production",
             "description": "<p>\"Customer service helped me fix a spelling mistake before production. That alone saved the gift. The finished set arrived packed well and my brother uses the glasses every weekend.\"</p>",
             "customer_photo": "shopify://shop_images/iap_800x800.6569571263_15t6jz6x.webp",
+            "img": "shopify://shop_images/screenshot_1788685673.png",
             "author": "Daniel K.",
             "author_subtitle": "Verified Customer"
           }
@@ -584,6 +602,7 @@
             "title": "Looked expensive",
             "description": "<p>\"The family decanter set made our anniversary dinner feel extra special. The names were centered nicely and the wood box made it look much more expensive than it was.\"</p>",
             "customer_photo": "shopify://shop_images/iap_300x300.4461690900_9f30pqo9.webp",
+            "img": "shopify://shop_images/screenshot_1788685834.png",
             "author": "Rachel S.",
             "author_subtitle": "Verified Customer"
           }
@@ -594,6 +613,7 @@
             "title": "Easy long-distance gift",
             "description": "<p>\"Sent this directly to my best friend, so I only saw photos after she opened it. Everything looked clean and classy, and she said it was one of the most thoughtful gifts she received.\"</p>",
             "customer_photo": "shopify://shop_images/iap_800x800.8001115870_faxgqm0j.webp",
+            "img": "shopify://shop_images/screenshot_1788685595.png",
             "author": "Nicole B.",
             "author_subtitle": "Verified Customer"
           }
@@ -627,7 +647,7 @@
         "slider_pagination_type": "bullets",
         "slider_scrollbar": true,
         "slider_partial_slides_mobile": true,
-        "slider_autoplay": 0,
+        "slider_autoplay": 1,
         "card_bg_color": "bg-primary",
         "card_bg_opacity": 10,
         "card_text_color": "text-body",
@@ -660,7 +680,7 @@
         "container_max_width": "",
         "header_title": "Gift Guides and Inspiration",
         "header_title_font_size": "h3",
-        "header_description": "<p>Ideas for choosing photos, wording, and occasions that make a personalized whiskey set feel unforgettable.</p>",
+        "header_description": "",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,

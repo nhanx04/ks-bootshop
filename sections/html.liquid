@@ -24,9 +24,34 @@
       {% render 'section-header' %}
     </div>
 
-    <div class="">
-      {{ section.settings.liquid }}
-    </div>
+    {% if section.settings.show_process_image %}
+      <div class="process-image-frame">
+        {% if section.settings.process_image != blank %}
+          <img
+            src="{{ section.settings.process_image | image_url: width: 3800 }}"
+            srcset="
+              {{ section.settings.process_image | image_url: width: 1200 }} 1200w,
+              {{ section.settings.process_image | image_url: width: 1800 }} 1800w,
+              {{ section.settings.process_image | image_url: width: 2400 }} 2400w,
+              {{ section.settings.process_image | image_url: width: 3000 }} 3000w,
+              {{ section.settings.process_image | image_url: width: 3800 }} 3800w"
+            sizes="(max-width: 600px) calc(100vw - 2rem), 100vw"
+            alt="{{ section.settings.process_image.alt | default: section.settings.header_title | escape }}"
+            width="{{ section.settings.process_image.width }}"
+            height="{{ section.settings.process_image.height }}"
+            loading="lazy"
+            decoding="async">
+        {% else %}
+          <div class="process-image-placeholder">
+            <span>Upload your process image in the Theme Editor</span>
+          </div>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="">
+        {{ section.settings.liquid }}
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -40,6 +65,17 @@
       "id": "liquid",
       "label": "HTML/Liquid code",
       "default": "<p class=\"alert alert-primary text-center\">Current time is: {{ \"now\" | date: \"%Y-%m-%d %H:%M\" }}</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_process_image",
+      "label": "Use process image instead of HTML content",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "process_image",
+      "label": "Process image"
     },
     {
       "type": "header",
