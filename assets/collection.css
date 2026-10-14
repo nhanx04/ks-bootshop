@@ -109,6 +109,26 @@
 
 .collection-card-img-wrapper img { 
   width: 100%;
+  display: block;
+}
+
+.collection-card-title-bottom {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2.5rem 1.5rem 1.25rem;
+  color: #fff;
+  text-align: left;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .65));
+}
+
+@media (max-width: 599px) {
+  .collection-card-title-bottom {
+    padding: 1.5rem .75rem .75rem;
+    font-size: .875rem;
+  }
 }
 
 .collection-card-title-normal {

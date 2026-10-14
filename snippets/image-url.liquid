@@ -40,6 +40,9 @@
     when 'ratio-3x4'
       assign width = size | divided_by: 4 | times: 3 | round
       assign height = size
+    when 'ratio-4x5'
+      assign width = size | divided_by: 5 | times: 4 | round
+      assign height = size
     when 'ratio-9x16'
       assign width = size | divided_by: 16 | times: 9 | round
       assign height = size
