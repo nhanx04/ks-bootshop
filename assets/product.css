@@ -272,8 +272,16 @@
 /*
   Product card
 */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .product-card-link {
-  display: block;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   text-decoration: none;
   color: currentColor;
 }
@@ -284,8 +292,17 @@
 }
 
 .product-card-title {
+  display: -webkit-box;
+  min-height: calc(2 * 1.2em);
   margin-bottom: 0.2em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   transition: all 200ms ease-out;
+}
+
+.product-card-price {
+  margin-top: auto;
 }
 
 .product-card-link:hover .product-card-title,

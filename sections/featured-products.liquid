@@ -4,6 +4,18 @@
   else
     assign products = collections[section.settings.collection].products
   endif
+
+  assign current_product_id = product.id
+
+  assign show_recommendation_content = true
+  if section.settings.recommended_mode and request.page_type == 'product' or section.settings.recommended_mode and request.path contains 'recommendations'
+    assign show_recommendation_content = false
+    if recommendations.performed? and recommendations.products_count > 0
+      assign show_recommendation_content = true
+    elsif collections.all.products_count > 1
+      assign show_recommendation_content = true
+    endif
+  endif
 %}
 
 {% capture empty_state %}
@@ -87,36 +99,46 @@
   <div 
     class="container"
     style="max-width: {{ section.settings.container_max_width | append: 'px' }};">
-    {% render 'section-header' %}
-    <div class="swiper mx-n4 mx-desktop-n5 mt-n3 mt-desktop-n5">
-      <div class="swiper-wrapper">
-        {% if section.settings.recommended_mode and request.path contains 'recommendations' %}
-          {% for product in recommendations.products %}
-            <div class="swiper-slide p-4 p-desktop-5">
-              {% render 'product-card', product: product %}
-            </div>
-          {% endfor %}
-        {% elsif products == blank %}
-          {{ empty_state }}
-        {% else %}
-          {% for product in products limit: section.settings.limit %} 
-            <div class="swiper-slide p-4 p-desktop-5">
-              {% render 'product-card', product: product %}
-            </div>
-          {% endfor %}
-        {% endif %}
-      </div>
-      <div class="swiper-controls">
-        <div class="swiper-pagination"></div>
-        <div class="swiper-scrollbar"></div>
-        <div class="swiper-button-prev">
-          {% render 'svg-icons', icon: 'chevron-left', size: 24 %}
+    {% if show_recommendation_content %}
+      {% render 'section-header' %}
+      <div class="swiper mx-n4 mx-desktop-n5 mt-n3 mt-desktop-n5">
+        <div class="swiper-wrapper">
+          {% if section.settings.recommended_mode and request.path contains 'recommendations' and recommendations.performed? and recommendations.products_count > 0 %}
+            {% for recommended_product in recommendations.products limit: section.settings.limit %}
+              <div class="swiper-slide p-4 p-desktop-5">
+                {% render 'product-card', product: recommended_product %}
+              </div>
+            {% endfor %}
+          {% elsif section.settings.recommended_mode and request.page_type == 'product' or section.settings.recommended_mode and request.path contains 'recommendations' %}
+            {% for fallback_product in collections.all.products limit: section.settings.limit %}
+              {% unless fallback_product.id == current_product_id %}
+                <div class="swiper-slide p-4 p-desktop-5">
+                  {% render 'product-card', product: fallback_product %}
+                </div>
+              {% endunless %}
+            {% endfor %}
+          {% elsif products == blank %}
+            {{ empty_state }}
+          {% else %}
+            {% for product in products limit: section.settings.limit %}
+              <div class="swiper-slide p-4 p-desktop-5">
+                {% render 'product-card', product: product %}
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
-        <div class="swiper-button-next">
-          {% render 'svg-icons', icon: 'chevron-right', size: 24 %}
+        <div class="swiper-controls">
+          <div class="swiper-pagination"></div>
+          <div class="swiper-scrollbar"></div>
+          <div class="swiper-button-prev">
+            {% render 'svg-icons', icon: 'chevron-left', size: 24 %}
+          </div>
+          <div class="swiper-button-next">
+            {% render 'svg-icons', icon: 'chevron-right', size: 24 %}
+          </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 </swiper-slider>
 
