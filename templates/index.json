@@ -111,7 +111,7 @@
         "limit": 8,
         "recommended_mode": true,
         "recommended_mode_intent": "related",
-        "header_title": "Best-Selling Personalized Sets",
+        "header_title": "Best-Selling Personalized Products",
         "header_title_font_size": "h3",
         "header_description": "",
         "header_description_font_size": "fs-md",
@@ -191,48 +191,24 @@
         "collection_rznnLq": {
           "type": "collection",
           "settings": {
-            "collection": "printed-set",
-            "img": "shopify://shop_images/c5154aa7-c679-4398-ab03-3e874444a20f.png",
+            "collection": "personalized-photo-gifts",
+            "img": "shopify://shop_images/6ed8fa2a-93ad-4323-854a-d392bb079302.png",
             "title": ""
           }
         },
         "collection_KdHXk9": {
           "type": "collection",
           "settings": {
-            "collection": "hobbie-gift",
-            "img": "shopify://shop_images/851a527c-a61c-4ab4-a9ac-c9da754e6bac.png",
+            "collection": "gifts-for-mom-women",
+            "img": "shopify://shop_images/a238c8f1-0df0-443c-9410-333cb03069c5.png",
             "title": ""
           }
         },
         "collection_b7ELCB": {
           "type": "collection",
           "settings": {
-            "collection": "gift-for-family",
-            "img": "shopify://shop_images/1a14c27b-136f-49de-a679-b46e3044dce3.png",
-            "title": ""
-          }
-        },
-        "collection_XRMXNt": {
-          "type": "collection",
-          "settings": {
-            "collection": "engraved-set",
-            "img": "shopify://shop_images/e864a308-9cdb-4fe1-ad1e-24af67b04590.png",
-            "title": ""
-          }
-        },
-        "collection_fQ9QDf": {
-          "type": "collection",
-          "settings": {
-            "collection": "career-gift",
-            "img": "shopify://shop_images/f359b176-6afa-4b19-bda7-c1811ed64e12.png",
-            "title": ""
-          }
-        },
-        "collection_kRQqkR": {
-          "type": "collection",
-          "settings": {
-            "collection": "engraved-set",
-            "img": "shopify://shop_images/74896dba-12e7-46b5-886a-387bc241c64f.png",
+            "collection": "gifts-for-dad-men",
+            "img": "shopify://shop_images/32ad046e-c41a-4bf6-b920-bd094f6b3514.png",
             "title": ""
           }
         }
@@ -240,10 +216,143 @@
       "block_order": [
         "collection_rznnLq",
         "collection_KdHXk9",
-        "collection_b7ELCB",
-        "collection_XRMXNt",
-        "collection_fQ9QDf",
-        "collection_kRQqkR"
+        "collection_b7ELCB"
+      ],
+      "settings": {
+        "bg_color": "bg-primary",
+        "bg_opacity": 10,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 10,
+        "container_max_width": "",
+        "header_title": "Best Personalized Gifts For You",
+        "header_title_font_size": "h3",
+        "header_description": "",
+        "header_description_font_size": "",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "collection_card_text_align": "text-center",
+        "collection_card_img_orientation": "ratio-16x9",
+        "collection_card_img_border": "img-thumbnail",
+        "collection_card_show_title": true,
+        "collection_card_title_font_size": "fs-md",
+        "collection_card_title_position": "collection-card-title-normal",
+        "collection_card_show_product_count": true,
+        "breakpoint_mobile": 2,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 3,
+        "pt": 10,
+        "pb": 0
+      }
+    },
+    "featured_collections_wghiEK": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_C6LJwb": {
+          "type": "collection",
+          "settings": {
+            "collection": "family-grandparent-gifts",
+            "img": "shopify://shop_images/17bcfd45-a3f2-4e82-a882-2fbe7fccfdd3.png",
+            "title": ""
+          }
+        },
+        "collection_ejhWBA": {
+          "type": "collection",
+          "settings": {
+            "collection": "birthday-milestone-gifts",
+            "img": "shopify://shop_images/bfa38b3a-8ec9-4050-bccf-f7ed39060335.png",
+            "title": ""
+          }
+        },
+        "collection_WemLPP": {
+          "type": "collection",
+          "settings": {
+            "collection": "profession-hobby-gifts",
+            "img": "shopify://shop_images/1d108f63-9c01-46fa-8021-db75577adc04.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_C6LJwb",
+        "collection_ejhWBA",
+        "collection_WemLPP"
+      ],
+      "settings": {
+        "bg_color": "bg-primary",
+        "bg_opacity": 10,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 10,
+        "container_max_width": "",
+        "header_title": "",
+        "header_title_font_size": "h3",
+        "header_description": "",
+        "header_description_font_size": "",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "collection_card_text_align": "text-center",
+        "collection_card_img_orientation": "ratio-16x9",
+        "collection_card_img_border": "img-thumbnail",
+        "collection_card_show_title": true,
+        "collection_card_title_font_size": "fs-md",
+        "collection_card_title_position": "collection-card-title-normal",
+        "collection_card_show_product_count": true,
+        "breakpoint_mobile": 2,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 3,
+        "pt": 0,
+        "pb": 5
+      }
+    },
+    "featured_collections_bm7dPf": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_KFdrYb": {
+          "type": "collection",
+          "settings": {
+            "collection": "whiskey-decanter-gifts",
+            "img": "shopify://shop_images/96244f0d-fac3-47ec-90a7-d9b81796b516.png",
+            "title": ""
+          }
+        },
+        "collection_QTV4Vf": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-tumblers",
+            "img": "shopify://shop_images/9b4b2448-5414-4dc0-ad67-e6b9722c95d2.png",
+            "title": ""
+          }
+        },
+        "collection_fNPktH": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-wine-tumblers",
+            "img": "shopify://shop_images/d0c8892f-fd84-448d-a403-a878fd042c2b.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_KFdrYb",
+        "collection_QTV4Vf",
+        "collection_fNPktH"
       ],
       "settings": {
         "bg_color": "bg-body",
@@ -255,7 +364,7 @@
         "border_color": "border-body",
         "border_opacity": 10,
         "container_max_width": "",
-        "header_title": "Shop by Gift Moment",
+        "header_title": "",
         "header_title_font_size": "h3",
         "header_description": "",
         "header_description_font_size": "",
@@ -277,6 +386,74 @@
         "breakpoint_tablet": 2,
         "breakpoint_desktop": 3,
         "pt": 11,
+        "pb": 0
+      }
+    },
+    "featured_collections_HQiDnC": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_9zzzN4": {
+          "type": "collection",
+          "settings": {
+            "collection": "wedding-couple-gifts",
+            "img": "shopify://shop_images/13be41e8-c5d0-4eb2-9455-9f0339557601.png",
+            "title": ""
+          }
+        },
+        "collection_qg9CJ9": {
+          "type": "collection",
+          "settings": {
+            "collection": "graduation-gifts",
+            "img": "shopify://shop_images/22e6e419-695a-4e03-b46a-0a51f19dc161.png",
+            "title": ""
+          }
+        },
+        "collection_7XWymj": {
+          "type": "collection",
+          "settings": {
+            "collection": "pet-lover-gifts",
+            "img": "shopify://shop_images/a50b9bc2-fd7f-4cf7-b4ab-4d143bb3bdc8.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_9zzzN4",
+        "collection_qg9CJ9",
+        "collection_7XWymj"
+      ],
+      "settings": {
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 1,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 10,
+        "container_max_width": "",
+        "header_title": "",
+        "header_title_font_size": "h3",
+        "header_description": "",
+        "header_description_font_size": "",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "collection_card_text_align": "text-center",
+        "collection_card_img_orientation": "ratio-16x9",
+        "collection_card_img_border": "img-thumbnail",
+        "collection_card_show_title": true,
+        "collection_card_title_font_size": "fs-md",
+        "collection_card_title_position": "collection-card-title-normal",
+        "collection_card_show_product_count": true,
+        "breakpoint_mobile": 1,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 3,
+        "pt": 0,
         "pb": 11
       }
     },
@@ -299,7 +476,7 @@
         "row_JkMDbM": {
           "type": "row",
           "settings": {
-            "bg_color": "bg-secondary",
+            "bg_color": "bg-white",
             "bg_opacity": 5,
             "bg_gradient": "",
             "text_color": "text-body",
@@ -338,6 +515,7 @@
       "block_order": [
         "row_JkMDbM"
       ],
+      "disabled": true,
       "settings": {
         "container_max_width": ""
       }
@@ -408,6 +586,7 @@
         "item_iKKgHJ",
         "item_Je3xNm"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
@@ -471,7 +650,55 @@
         "header_description": "",
         "header_description_font_size": "fs-md",
         "pt": 0,
-        "pb": 10
+        "pb": 0
+      }
+    },
+    "featured_products_W3ybeQ": {
+      "type": "featured-products",
+      "settings": {
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-primary",
+        "border_opacity": 100,
+        "container_max_width": "",
+        "products": [
+          "baby-decanter-set",
+          "bestie-decanter-set",
+          "couple-decanter-set",
+          "doctor-decanter-set",
+          "engraved-family-decanter-set",
+          "fire-fighter-decanter-set",
+          "grand-parent-decanter-set",
+          "uv-print-milatary-decanter-set",
+          "uv-print-hooker-decanter-set",
+          "pet-decanter-set",
+          "police-decanter-set",
+          "whiskey-ang-cigar-decanter-set"
+        ],
+        "collection": "latest",
+        "limit": 8,
+        "recommended_mode": true,
+        "recommended_mode_intent": "related",
+        "header_title": "",
+        "header_title_font_size": "h3",
+        "header_description": "",
+        "header_description_font_size": "fs-md",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "breakpoint_mobile": 1,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 4,
+        "pt": 0,
+        "pb": 11
       }
     },
     "faq_7TT7z4": {
@@ -668,6 +895,7 @@
     },
     "blog_slider_UUweWT": {
       "type": "blog-slider",
+      "disabled": true,
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
@@ -725,10 +953,14 @@
     "richtext_4miPYL",
     "richtext_AtYwxr",
     "featured_collections_n3Br7m",
+    "featured_collections_wghiEK",
+    "featured_collections_bm7dPf",
+    "featured_collections_HQiDnC",
     "separator_kfq8kz",
     "media_with_text_xTY8gi",
     "card_slider_BFzjjF",
     "html_Y7Cp8x",
+    "featured_products_W3ybeQ",
     "faq_7TT7z4",
     "testimonials_eFtnyC",
     "blog_slider_UUweWT",

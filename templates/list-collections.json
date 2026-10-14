@@ -11,6 +11,34 @@
   "sections": {
     "featured_collections_CGE4nM": {
       "type": "featured-collections",
+      "blocks": {
+        "collection_4rgcPa": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-photo-gifts",
+            "title": ""
+          }
+        },
+        "collection_HWePVE": {
+          "type": "collection",
+          "settings": {
+            "collection": "gifts-for-mom-women",
+            "title": ""
+          }
+        },
+        "collection_8RRNqb": {
+          "type": "collection",
+          "settings": {
+            "collection": "gifts-for-dad-men",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_4rgcPa",
+        "collection_HWePVE",
+        "collection_8RRNqb"
+      ],
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
@@ -23,7 +51,7 @@
         "container_max_width": "",
         "header_title": "Shop Personalized Gift Collections",
         "header_title_font_size": "h2",
-        "header_description": "<p>Browse engraved, printed, family, hobby, career, and occasion-based decanter sets to find the best fit for your gift.<\/p>",
+        "header_description": "<p>Browse engraved, printed, family, hobby, career, and occasion-based decanter sets to find the best fit for your gift.</p>",
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
@@ -41,13 +69,211 @@
         "collection_card_show_product_count": true,
         "breakpoint_mobile": 1,
         "breakpoint_tablet": 2,
-        "breakpoint_desktop": 4,
+        "breakpoint_desktop": 3,
         "pt": 10,
+        "pb": 0
+      }
+    },
+    "featured_collections_7xxitX": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_T8LY9V": {
+          "type": "collection",
+          "settings": {
+            "collection": "family-grandparent-gifts",
+            "title": ""
+          }
+        },
+        "collection_fhAcHQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "birthday-milestone-gifts",
+            "title": ""
+          }
+        },
+        "collection_7RzDCa": {
+          "type": "collection",
+          "settings": {
+            "collection": "profession-hobby-gifts",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_T8LY9V",
+        "collection_fhAcHQ",
+        "collection_7RzDCa"
+      ],
+      "settings": {
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "container_max_width": "",
+        "header_title": "",
+        "header_title_font_size": "h2",
+        "header_description": "",
+        "header_description_font_size": "fs-md",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "collection_card_text_align": "text-center",
+        "collection_card_img_orientation": "ratio-4x3",
+        "collection_card_img_border": "img-thumbnail",
+        "collection_card_show_title": true,
+        "collection_card_title_font_size": "fs-lg",
+        "collection_card_title_position": "collection-card-title-bottom",
+        "collection_card_show_product_count": true,
+        "breakpoint_mobile": 1,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 3,
+        "pt": 0,
+        "pb": 10
+      }
+    },
+    "featured_collections_mbtnhG": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_fjR7bT": {
+          "type": "collection",
+          "settings": {
+            "collection": "whiskey-decanter-gifts",
+            "title": ""
+          }
+        },
+        "collection_cpLrjy": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-tumblers",
+            "title": ""
+          }
+        },
+        "collection_bVqGf7": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-wine-tumblers",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_fjR7bT",
+        "collection_cpLrjy",
+        "collection_bVqGf7"
+      ],
+      "settings": {
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "container_max_width": "",
+        "header_title": "",
+        "header_title_font_size": "h2",
+        "header_description": "",
+        "header_description_font_size": "fs-md",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "collection_card_text_align": "text-center",
+        "collection_card_img_orientation": "ratio-4x3",
+        "collection_card_img_border": "img-thumbnail",
+        "collection_card_show_title": true,
+        "collection_card_title_font_size": "fs-lg",
+        "collection_card_title_position": "collection-card-title-bottom",
+        "collection_card_show_product_count": true,
+        "breakpoint_mobile": 1,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 3,
+        "pt": 0,
+        "pb": 10
+      }
+    },
+    "featured_collections_P6mHWy": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_crXWhk": {
+          "type": "collection",
+          "settings": {
+            "collection": "wedding-couple-gifts",
+            "title": ""
+          }
+        },
+        "collection_m4LWcP": {
+          "type": "collection",
+          "settings": {
+            "collection": "graduation-gifts",
+            "title": ""
+          }
+        },
+        "collection_Ejn3iV": {
+          "type": "collection",
+          "settings": {
+            "collection": "pet-lover-gifts",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_crXWhk",
+        "collection_m4LWcP",
+        "collection_Ejn3iV"
+      ],
+      "settings": {
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-body",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "container_max_width": "",
+        "header_title": "",
+        "header_title_font_size": "h2",
+        "header_description": "",
+        "header_description_font_size": "fs-md",
+        "slider_speed": 300,
+        "slider_navigation": true,
+        "slider_pagination": true,
+        "slider_pagination_type": "bullets",
+        "slider_scrollbar": true,
+        "slider_partial_slides_mobile": false,
+        "slider_autoplay": 0,
+        "collection_card_text_align": "text-center",
+        "collection_card_img_orientation": "ratio-4x3",
+        "collection_card_img_border": "img-thumbnail",
+        "collection_card_show_title": true,
+        "collection_card_title_font_size": "fs-lg",
+        "collection_card_title_position": "collection-card-title-bottom",
+        "collection_card_show_product_count": true,
+        "breakpoint_mobile": 1,
+        "breakpoint_tablet": 2,
+        "breakpoint_desktop": 3,
+        "pt": 0,
         "pb": 10
       }
     }
   },
   "order": [
-    "featured_collections_CGE4nM"
+    "featured_collections_CGE4nM",
+    "featured_collections_7xxitX",
+    "featured_collections_mbtnhG",
+    "featured_collections_P6mHWy"
   ]
 }
