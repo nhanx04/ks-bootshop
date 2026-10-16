@@ -108,6 +108,13 @@
           "whiskey-ang-cigar-decanter-set"
         ],
         "collection": "latest",
+        "show_feature_card": true,
+        "feature_image": "shopify://shop_images/hero_1.png",
+        "feature_title": "Best Sellers",
+        "feature_link": "/collections/latest",
+        "feature_button_label": "Xem ngay",
+        "show_view_all": true,
+        "view_all_label": "Xem tất cả",
         "limit": 8,
         "recommended_mode": true,
         "recommended_mode_intent": "related",
@@ -117,14 +124,14 @@
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
-        "slider_pagination": true,
+        "slider_pagination": false,
         "slider_pagination_type": "bullets",
-        "slider_scrollbar": true,
+        "slider_scrollbar": false,
         "slider_partial_slides_mobile": false,
         "slider_autoplay": 0,
-        "breakpoint_mobile": 1,
+        "breakpoint_mobile": 2,
         "breakpoint_tablet": 2,
-        "breakpoint_desktop": 4,
+        "breakpoint_desktop": 3,
         "pt": 10,
         "pb": 11
       }
@@ -219,7 +226,7 @@
         "collection_b7ELCB"
       ],
       "settings": {
-        "bg_color": "bg-primary",
+        "bg_color": "bg-white",
         "bg_opacity": 10,
         "bg_gradient": "",
         "text_color": "text-body",
@@ -250,7 +257,7 @@
         "breakpoint_tablet": 2,
         "breakpoint_desktop": 3,
         "pt": 10,
-        "pb": 0
+        "pb": 5
       }
     },
     "featured_collections_wghiEK": {
@@ -286,6 +293,7 @@
         "collection_ejhWBA",
         "collection_WemLPP"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "bg-primary",
         "bg_opacity": 10,
@@ -354,6 +362,7 @@
         "collection_QTV4Vf",
         "collection_fNPktH"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
@@ -422,6 +431,7 @@
         "collection_qg9CJ9",
         "collection_7XWymj"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
@@ -680,6 +690,12 @@
           "whiskey-ang-cigar-decanter-set"
         ],
         "collection": "latest",
+        "show_feature_card": true,
+        "feature_title": "Explore Products",
+        "feature_link": "/collections/latest",
+        "feature_button_label": "Xem ngay",
+        "show_view_all": true,
+        "view_all_label": "Xem tất cả",
         "limit": 8,
         "recommended_mode": true,
         "recommended_mode_intent": "related",
@@ -689,14 +705,14 @@
         "header_description_font_size": "fs-md",
         "slider_speed": 300,
         "slider_navigation": true,
-        "slider_pagination": true,
+        "slider_pagination": false,
         "slider_pagination_type": "bullets",
-        "slider_scrollbar": true,
+        "slider_scrollbar": false,
         "slider_partial_slides_mobile": false,
         "slider_autoplay": 0,
         "breakpoint_mobile": 1,
         "breakpoint_tablet": 2,
-        "breakpoint_desktop": 4,
+        "breakpoint_desktop": 3,
         "pt": 0,
         "pb": 11
       }

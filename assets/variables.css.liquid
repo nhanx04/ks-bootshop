@@ -26,7 +26,7 @@
   {% comment -%} 
     General
   {%- endcomment -%}
-  --bs-container-max-width: {{ settings.container_max_width | append: 'px' }};
+  --bs-container-side-gutter: {{ settings.container_side_gutter | default: 35 | append: 'px' }};
   --bs-border-radius: {{ settings.border_radius | append: 'rem' }};
 
   {% comment -%} 

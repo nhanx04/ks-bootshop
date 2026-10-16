@@ -48,7 +48,20 @@
   Container
 */
 .container {
-  max-width: var(--bs-container-max-width);
+  width: calc(100% - var(--bs-container-side-gutter) - var(--bs-container-side-gutter));
+  max-width: none;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --bs-container-side-gutter: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  :root {
+    --bs-container-side-gutter: 12px;
+  }
 }
 
 
