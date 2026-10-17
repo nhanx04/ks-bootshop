@@ -61,14 +61,14 @@
             {% if search.results.first.object_type == 'product' %}
               <div 
                 class="
-                  product-list mx-n3 mx-desktop-n4 mb-0 row 
+                  product-list mx-n2 mx-tablet-n3 mx-desktop-n4 mb-0 row
                   {{ section.settings.breakpoint_mobile | prepend: 'row-cols-' }}
                   {{ section.settings.breakpoint_tablet | prepend: 'row-cols-tablet-' }}
                   {{ section.settings.breakpoint_desktop | prepend: 'row-cols-desktop-' }}
                 " 
                 role="list">
                 {% for product in search.results %}
-                  <div class="p-3 p-desktop-4 mb-3 mb-desktop-4" role="list-item">
+                  <div class="p-2 p-tablet-3 p-desktop-4 mb-2 mb-tablet-3 mb-desktop-4" role="list-item">
                     {% render 'product-card', product: product %}
                   </div>
                 {% endfor %}

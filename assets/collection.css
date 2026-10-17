@@ -127,6 +127,10 @@
 }
 
 @media (max-width: 599px) {
+  .featured-collections .swiper-scrollbar {
+    display: none;
+  }
+
   .collection-card-title-bottom {
     padding: 1.5rem .75rem .75rem;
     font-size: 1.25rem !important;

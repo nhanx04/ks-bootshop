@@ -58,8 +58,9 @@
           "type": "mobile",
           "settings": {
             "container_max_width": "",
+            "logo": "shopify://shop_images/logo-black.png",
             "logo_height": 30,
-            "main_menu": "",
+            "main_menu": "main-menu",
             "collections_menu": "",
             "social_icons": true,
             "pt": 2,

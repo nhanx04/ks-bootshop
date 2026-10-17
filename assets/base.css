@@ -60,7 +60,12 @@
 
 @media (max-width: 599px) {
   :root {
-    --bs-container-side-gutter: 12px;
+    --bs-container-side-gutter: 6px;
+  }
+
+  .container {
+    padding-right: 6px;
+    padding-left: 6px;
   }
 }
 

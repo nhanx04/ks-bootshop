@@ -86,6 +86,21 @@
   opacity: .75;
 }
 
+@media (max-width: 599px) {
+  #navbar-mobile .navbar-logo {
+    justify-content: center;
+  }
+
+  #navbar-mobile .navbar-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #navbar-mobile .nav-link-icon {
+    padding: .4rem;
+  }
+}
+
 .nav-desktop-menu .nav-item {
   padding: 0 .075rem;
 }

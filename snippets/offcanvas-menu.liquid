@@ -5,9 +5,10 @@
   data-bs-backdrop="false"
   aria-label="{{ 'general.accessibility.menu' | t }}">
   <div class="offcanvas-body">
-    {% unless block.settings.main_menu == nil %}
+    {% assign mobile_menu = block.settings.main_menu | default: 'main-menu' %}
+    {% if linklists[mobile_menu].links != blank %}
       <ul class="nav accordion-nav mb-9">
-        {% for link in linklists[block.settings.main_menu].links %}
+        {% for link in linklists[mobile_menu].links %}
           {% if link.links == blank %}
             <li class="nav-item">
               <a 
@@ -53,7 +54,7 @@
           {% endif %}
         {% endfor %}
       </ul>
-    {% endunless %}
+    {% endif %}
 
     {% if block.settings.social_icons %}
       <div class="social-icons-wrapper text-center mb-5">

@@ -35,14 +35,14 @@
         {% render 'collection-utilities' %}
         <div 
           class="
-            product-list mx-n4 mx-desktop-n5 mb-0 row 
+            product-list mx-n2 mx-tablet-n4 mx-desktop-n5 mb-0 row
             {{ section.settings.breakpoint_mobile | prepend: 'row-cols-' }}
             {{ section.settings.breakpoint_tablet | prepend: 'row-cols-tablet-' }}
             {{ section.settings.breakpoint_desktop | prepend: 'row-cols-desktop-' }}
           " 
           role="list">
           {% for product in collection.products %}
-            <div class="p-4 p-desktop-5 mb-4 mb-desktop-5" role="list-item">
+            <div class="p-2 p-tablet-4 p-desktop-5 mb-2 mb-tablet-4 mb-desktop-5" role="list-item">
               {% render 'product-card', product: product %}
             </div>
           {% endfor %}
