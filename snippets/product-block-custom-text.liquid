@@ -1,0 +1,15 @@
+<div class="product-block-customization mb-4" {{ block.shopify_attributes }}>
+  <label class="form-label" for="custom-text-{{ block.id }}">
+    {{ block.settings.label | escape }}
+  </label>
+  <textarea
+    id="custom-text-{{ block.id }}"
+    class="form-control"
+    name="properties[Custom text]"
+    rows="3"
+    maxlength="{{ block.settings.max_length }}"
+    {% if block.settings.required %}required{% endif %}></textarea>
+  {% if block.settings.help_text != blank %}
+    <p class="form-text mb-0">{{ block.settings.help_text | escape }}</p>
+  {% endif %}
+</div>

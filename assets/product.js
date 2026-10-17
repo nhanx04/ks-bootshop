@@ -66,6 +66,7 @@ class ProductForm extends HTMLElement {
     const finalPrice = this.form.querySelector('.product-price-final')
     const compareBadge = this.form.querySelector('.product-sale-badge')
     const soldOutBadge = this.form.querySelector('.product-sold-out-badge')
+    const inStockBadge = this.form.querySelector('.product-in-stock-badge')
 
     if (selectedVariant.compare_at_price > selectedVariant.price) {
       comparePrice.textContent = window.Shopify.formatMoney(selectedVariant.compare_at_price)
@@ -91,8 +92,10 @@ class ProductForm extends HTMLElement {
 
     if (selectedVariant.available) {
       soldOutBadge.setAttribute('hidden', 'hidden')
+      inStockBadge?.removeAttribute('hidden')
     } else {
       soldOutBadge.removeAttribute('hidden')
+      inStockBadge?.setAttribute('hidden', 'hidden')
     }
   }
 
@@ -122,12 +125,13 @@ class ProductForm extends HTMLElement {
     this.atcBtn.setAttribute('aria-busy', 'true')
 
     const formData = new FormData(this.form)
-
-    await document.querySelector('cart-container').add(formData)
-
-    this.atcBtn.classList.remove('loading')
-    this.atcBtn.disabled = false
-    this.atcBtn.setAttribute('aria-busy', 'false')
+    try {
+      await document.querySelector('cart-container').add(formData)
+    } finally {
+      this.atcBtn.classList.remove('loading')
+      this.atcBtn.disabled = false
+      this.atcBtn.setAttribute('aria-busy', 'false')
+    }
   }
 
   onClickBuyBtn () {
@@ -138,6 +142,49 @@ class ProductForm extends HTMLElement {
   }
 }
 customElements.define('product-form', ProductForm)
+
+class ProductImageUpload extends HTMLElement {
+  constructor () {
+    super()
+
+    this.input = this.querySelector('input[type="file"]')
+    this.preview = this.querySelector('.product-image-upload-preview')
+    this.empty = this.querySelector('.product-image-upload-empty')
+    this.name = this.querySelector('.product-image-upload-name')
+    this.objectUrl = null
+
+    this.input.addEventListener('change', () => this.updatePreview())
+  }
+
+  updatePreview () {
+    if (this.objectUrl) URL.revokeObjectURL(this.objectUrl)
+    this.objectUrl = null
+
+    const file = this.input.files?.[0]
+    this.name.textContent = file?.name || ''
+    this.preview.hidden = true
+    this.preview.removeAttribute('src')
+    this.empty.hidden = false
+
+    if (!file || !file.type.startsWith('image/')) return
+
+    this.objectUrl = URL.createObjectURL(file)
+    this.preview.onload = () => {
+      this.preview.hidden = false
+      this.empty.hidden = true
+    }
+    this.preview.onerror = () => {
+      this.preview.hidden = true
+      this.empty.hidden = false
+    }
+    this.preview.src = this.objectUrl
+  }
+
+  disconnectedCallback () {
+    if (this.objectUrl) URL.revokeObjectURL(this.objectUrl)
+  }
+}
+customElements.define('product-image-upload', ProductImageUpload)
 
 class ProductMediaGallery extends HTMLElement {
   constructor () {

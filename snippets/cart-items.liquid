@@ -39,15 +39,15 @@
                 <ul class="cart-item-properties list-unstyled opacity-70 small mb-1">
                   {% for property in line_item.properties %}
                     {% assign first_character_in_key = property.first | slice: 0 %}
-                    {% unless first_character_in_key == '_' %}
+                    {% unless first_character_in_key == '_' or property.last == blank %}
                       <li>
-                        {% if property.last contains 'https' %}
-                          {{ property.first }}: 
-                          <a href="{{ property.last }}" target="_blank">
+                        {% if property.last contains '/uploads/' %}
+                          {{ property.first | escape }}:
+                          <a href="{{ property.last | escape }}" target="_blank" rel="noopener noreferrer">
                             {{ 'cart.property_view_file' | t }}
                           </a>
                         {% else %}
-                          {{ property.first }}: {{ property.last }}
+                          {{ property.first | escape }}: {{ property.last | escape }}
                         {% endif %}
                       </li>
                     {% endunless %}

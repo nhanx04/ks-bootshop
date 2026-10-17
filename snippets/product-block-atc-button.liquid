@@ -53,13 +53,13 @@
     </button>
   </div>
 
-  {% if block.settings.show_dynamic_buttons %}
+  {% if block.settings.show_dynamic_buttons and has_customization != true %}
     <div class="product-dynamic-buttons mt-5 pb-2">
       {{ form | payment_button }}
     </div>
   {% endif %}
   
-  {% if block.settings.show_buy_btn %}
+  {% if block.settings.show_buy_btn and has_customization != true %}
     <button 
       class="btn btn-buy mt-4 {{ block.settings.buy_btn_color }} {{ block.settings.buy_btn_size }}" 
       type="button"

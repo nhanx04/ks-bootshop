@@ -43,6 +43,10 @@
       {% endif %}
     </span> 
 
+    <span class="product-in-stock-badge badge" {% unless current_variant.available %}hidden{% endunless %}>
+      {{ 'product.in_stock' | t }}
+    </span>
+
     <span 
       class="product-sold-out-badge badge"
       {% if current_variant.available %}hidden{% endif %}>

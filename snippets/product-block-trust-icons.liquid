@@ -39,13 +39,27 @@
         endcase
       %}
       <li class="col p-2">
-        <img 
-          class="img-fluid mb-3"
-          src="{{ img | image_url: width: block.settings.img_size }}" 
-          alt="{{ img.alt }}"
-          width="{{ block.settings.img_size }}"
-          height="{{ block.settings.img_size | divided_by: img.aspect_ratio | round }}"
-          loading="lazy">
+        <span class="trust-icon" aria-hidden="true">
+          {% if img.width != blank %}
+            <img
+              src="{{ img | image_url: width: block.settings.img_size }}"
+              alt=""
+              width="{{ block.settings.img_size }}"
+              height="{{ block.settings.img_size | divided_by: img.aspect_ratio | round }}"
+              loading="lazy">
+          {% else %}
+            {% case forloop.index %}
+              {% when 1 %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.2-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.2 6C19.5 16.4 12 21 12 21Z"/><path d="m12 8 .7 1.7 1.8.2-1.4 1.2.4 1.8-1.5-.9-1.5.9.4-1.8-1.4-1.2 1.8-.2Z"/></svg>
+              {% when 2 %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/><path d="M5 3h7M2 10h3"/></svg>
+              {% when 3 %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 5v6c0 5-3.2 8.4-8 11-4.8-2.6-8-6-8-11V5Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+              {% when 4 %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+            {% endcase %}
+          {% endif %}
+        </span>
         <div class="rte small lh-sm">
           {{ text }}
         </div>

@@ -1,19 +1,25 @@
 {% liquid
-  if section.settings.collection == blank
-    assign products = section.settings.products
+  assign feature_collection = collections[section.settings.collection]
+  if feature_collection != blank and feature_collection.products_count > 0
+    assign products = feature_collection.products
   else
-    assign products = collections[section.settings.collection].products
+    assign products = section.settings.products
   endif
 
   assign current_product_id = product.id
-
-  assign feature_collection = collections[section.settings.collection]
   assign feature_link = section.settings.feature_link | default: feature_collection.url | default: routes.all_products_collection_url
   assign feature_title = section.settings.feature_title | default: feature_collection.title | default: section.settings.header_title
   assign feature_image = section.settings.feature_image | default: feature_collection.image | default: products.first.featured_image
 
+  assign recommendation_grid = false
+  if section.settings.recommended_mode
+    if request.page_type == 'product' or request.path contains 'recommendations'
+      assign recommendation_grid = true
+    endif
+  endif
+
   assign show_recommendation_content = true
-  if section.settings.recommended_mode and request.page_type == 'product' or section.settings.recommended_mode and request.path contains 'recommendations'
+  if recommendation_grid
     assign show_recommendation_content = false
     if recommendations.performed? and recommendations.products_count > 0
       assign show_recommendation_content = true
@@ -48,7 +54,7 @@
     const sectionId = '{{ section.id }}'
     const baseUrl = '{{ routes.product_recommendations_url }}'
     const productId = {{ product.id }}
-    const limit = {{ section.settings.limit }}
+    const limit = Math.min({{ section.settings.limit }}, 10)
     const intent = '{{ section.settings.recommended_mode_intent }}'
     
     const url = `${baseUrl}?section_id=${sectionId}&product_id=${productId}&limit=${limit}&intent=${intent}`
@@ -75,38 +81,66 @@
 </script>
 {% endif %}
 
-<swiper-slider
-  id="featured-products-{{ section.id }}" 
-  class="
-    featured-products swiper-slider
-    {{ section.settings.bg_color }} 
-    {{ section.settings.bg_gradient }}
-    {{ section.settings.text_color }}
-    {{ section.settings.border_top_width | prepend: 'border-top-' }}
-    {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }}
-    {{ section.settings.border_color }} 
-    {{ section.settings.pt | prepend: 'pt-' }} 
-    {{ section.settings.pb | prepend: 'pb-' }}
-  "
-  style="
-    --bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }};
-    --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};
-  "
-  data-section-id="{{ section.id }}"
-  data-slider-speed="{{ section.settings.slider_speed }}"
-  data-slider-navigation="{{ section.settings.slider_navigation }}"
-  data-slider-pagination="{{ section.settings.slider_pagination }}"
-  data-slider-scrollbar="{{ section.settings.slider_scrollbar }}"
-  data-slider-autoplay="{{ section.settings.slider_autoplay }}"
-  data-breakpoint-mobile="{{ section.settings.breakpoint_mobile }}"
-  data-breakpoint-tablet="{{ section.settings.breakpoint_tablet }}"
-  data-breakpoint-desktop="{{ section.settings.breakpoint_desktop }}">
+{% if recommendation_grid %}
+  <div
+    id="featured-products-{{ section.id }}"
+    class="featured-products featured-products-recommendations {{ section.settings.bg_color }} {{ section.settings.bg_gradient }} {{ section.settings.text_color }} {{ section.settings.border_top_width | prepend: 'border-top-' }} {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }} {{ section.settings.border_color }} {{ section.settings.pt | prepend: 'pt-' }} {{ section.settings.pb | prepend: 'pb-' }}"
+    style="--bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }}; --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};">
+{% else %}
+  <swiper-slider
+    id="featured-products-{{ section.id }}"
+    class="featured-products swiper-slider {{ section.settings.bg_color }} {{ section.settings.bg_gradient }} {{ section.settings.text_color }} {{ section.settings.border_top_width | prepend: 'border-top-' }} {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }} {{ section.settings.border_color }} {{ section.settings.pt | prepend: 'pt-' }} {{ section.settings.pb | prepend: 'pb-' }}"
+    style="--bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }}; --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};"
+    data-section-id="{{ section.id }}"
+    data-slider-speed="{{ section.settings.slider_speed }}"
+    data-slider-navigation="{{ section.settings.slider_navigation }}"
+    data-slider-pagination="{{ section.settings.slider_pagination }}"
+    data-slider-scrollbar="{{ section.settings.slider_scrollbar }}"
+    data-slider-autoplay="{{ section.settings.slider_autoplay }}"
+    data-breakpoint-mobile="{{ section.settings.breakpoint_mobile }}"
+    data-breakpoint-tablet="{{ section.settings.breakpoint_tablet }}"
+    data-breakpoint-desktop="{{ section.settings.breakpoint_desktop }}">
+{% endif %}
   <div 
     class="container"
     style="max-width: {{ section.settings.container_max_width | append: 'px' }};">
     {% if show_recommendation_content %}
       {% render 'section-header' %}
       <div class="featured-products-layout{% if request.page_type == 'index' and section.settings.show_feature_card %} has-promo{% endif %}">
+        {% if recommendation_grid %}
+          {% liquid
+            assign shown_ids = '|' | append: current_product_id | append: '|'
+            assign shown_count = 0
+          %}
+          <div class="featured-products-recommendation-grid">
+            {% if recommendations.performed? and recommendations.products_count > 0 %}
+              {% for recommended_product in recommendations.products %}
+                {% assign product_marker = '|' | append: recommended_product.id | append: '|' %}
+                {% unless shown_ids contains product_marker %}
+                  <div class="featured-products-recommendation-item">
+                    {% render 'product-card', product: recommended_product %}
+                  </div>
+                  {% assign shown_ids = shown_ids | append: product_marker %}
+                  {% assign shown_count = shown_count | plus: 1 %}
+                {% endunless %}
+                {% if shown_count >= section.settings.limit %}{% break %}{% endif %}
+              {% endfor %}
+            {% endif %}
+            {% if shown_count < section.settings.limit %}
+              {% for fallback_product in collections.all.products %}
+                {% assign product_marker = '|' | append: fallback_product.id | append: '|' %}
+                {% unless shown_ids contains product_marker %}
+                  <div class="featured-products-recommendation-item">
+                    {% render 'product-card', product: fallback_product %}
+                  </div>
+                  {% assign shown_ids = shown_ids | append: product_marker %}
+                  {% assign shown_count = shown_count | plus: 1 %}
+                {% endunless %}
+                {% if shown_count >= section.settings.limit %}{% break %}{% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% else %}
         {% if request.page_type == 'index' and section.settings.show_feature_card %}
           <a class="featured-products-promo" href="{{ feature_link }}">
             {% if feature_image %}
@@ -120,21 +154,7 @@
         {% endif %}
       <div class="swiper mx-n2 mx-tablet-n4 mx-desktop-n5 mt-n3 mt-desktop-n5">
         <div class="swiper-wrapper">
-          {% if section.settings.recommended_mode and request.path contains 'recommendations' and recommendations.performed? and recommendations.products_count > 0 %}
-            {% for recommended_product in recommendations.products limit: section.settings.limit %}
-              <div class="swiper-slide p-2 p-tablet-4 p-desktop-5">
-                {% render 'product-card', product: recommended_product %}
-              </div>
-            {% endfor %}
-          {% elsif section.settings.recommended_mode and request.page_type == 'product' or section.settings.recommended_mode and request.path contains 'recommendations' %}
-            {% for fallback_product in collections.all.products limit: section.settings.limit %}
-              {% unless fallback_product.id == current_product_id %}
-                <div class="swiper-slide p-2 p-tablet-4 p-desktop-5">
-                  {% render 'product-card', product: fallback_product %}
-                </div>
-              {% endunless %}
-            {% endfor %}
-          {% elsif products == blank %}
+          {% if products == blank %}
             {{ empty_state }}
           {% else %}
             {% for product in products limit: section.settings.limit %}
@@ -155,7 +175,13 @@
           </div>
         </div>
       </div>
+      {% endif %}
       </div>
+      {% if recommendation_grid %}
+        <div class="featured-products-view-all">
+          <a href="{{ routes.all_products_collection_url }}">View all <span aria-hidden="true">›</span></a>
+        </div>
+      {% endif %}
       {% if request.page_type == 'index' and section.settings.show_view_all %}
         <div class="featured-products-view-all">
           <a href="{{ feature_link }}">{{ section.settings.view_all_label | default: 'Xem tất cả' }} <span aria-hidden="true">›</span></a>
@@ -163,7 +189,7 @@
       {% endif %}
     {% endif %}
   </div>
-</swiper-slider>
+{% if recommendation_grid %}</div>{% else %}</swiper-slider>{% endif %}
 
 {% schema %}
 {

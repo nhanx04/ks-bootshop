@@ -1,0 +1,29 @@
+<div class="product-block-customization mb-4" {{ block.shopify_attributes }}>
+  <label class="form-label" for="custom-image-{{ block.id }}">
+    {{ block.settings.label | escape }}
+  </label>
+  <product-image-upload class="product-image-upload">
+    <label class="product-image-upload-tile" for="custom-image-{{ block.id }}">
+      <input
+        id="custom-image-{{ block.id }}"
+        class="product-image-upload-input"
+        type="file"
+        name="properties[Customer photo]"
+        accept=".jpg,.jpeg,.png,.webp,.heic"
+        {% if block.settings.required %}required{% endif %}>
+      <img class="product-image-upload-preview" alt="" hidden>
+      <span class="product-image-upload-empty" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <path d="m21 15-5-5L5 21"></path>
+        </svg>
+        <span>Choose photo</span>
+      </span>
+    </label>
+    <span class="product-image-upload-name" aria-live="polite"></span>
+  </product-image-upload>
+  {% if block.settings.help_text != blank %}
+    <p class="form-text mb-0">{{ block.settings.help_text | escape }}</p>
+  {% endif %}
+</div>

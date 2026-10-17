@@ -14,12 +14,6 @@
     "announcement_bar_Ge9W3V": {
       "type": "announcement-bar",
       "blocks": {
-        "slide_j46kwk": {
-          "type": "slide",
-          "settings": {
-            "announcement": "Announce something important here"
-          }
-        },
         "slide_mwF4Tk": {
           "type": "slide",
           "settings": {
@@ -28,7 +22,6 @@
         }
       },
       "block_order": [
-        "slide_j46kwk",
         "slide_mwF4Tk"
       ],
       "settings": {
@@ -74,6 +67,11 @@
             "logo": "shopify://shop_images/logo-black.png",
             "logo_height": 46,
             "main_menu": "main-menu",
+            "featured_collections": [
+              "personalized-photo-gifts",
+              "gifts-for-mom-women",
+              "gifts-for-dad-men"
+            ],
             "pt": 5,
             "pb": 5
           }

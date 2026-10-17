@@ -1,0 +1,11 @@
+{% assign collection_image = collection.image | default: collection.products.first.featured_image %}
+<a class="navbar-collection-card" href="{{ collection.url }}">
+  <span class="navbar-collection-card-image">
+    {% if collection_image != blank %}
+      {{ collection_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 540, 720', alt: collection.title }}
+    {% else %}
+      {{ 'collection-1' | placeholder_svg_tag }}
+    {% endif %}
+  </span>
+  <span class="navbar-collection-card-title">{{ collection.title | escape }}</span>
+</a>
