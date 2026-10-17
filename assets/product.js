@@ -191,6 +191,13 @@ class ProductMediaGallery extends HTMLElement {
     super()
 
     const initialSlide = Number(this.dataset.initialSlide)
+    this.hasSideThumbs = this.classList.contains('product-media-gallery--side-thumbs')
+    this.desktopThumbs = window.matchMedia('(min-width: 1200px)')
+    this.mainWrapper = this.querySelector('.swiper-main-wrapper')
+
+    if (this.hasSideThumbs && this.desktopThumbs.matches) {
+      this.setThumbsHeight()
+    }
 
     /** @type {Swiper} */
     this.thumbs = new window.Swiper(this.querySelector('.swiper-thumbs'), this.thumbsOptions())
@@ -200,15 +207,51 @@ class ProductMediaGallery extends HTMLElement {
 
     this.main.slideTo(initialSlide)
 
+    this.setupSideThumbs()
     this.setStickyPosition()
     this.listenVariantChange()
+  }
+
+  setThumbsHeight () {
+    const height = this.mainWrapper.getBoundingClientRect().height
+    if (height > 0) this.querySelector('.swiper-thumbs').style.height = `${height}px`
+  }
+
+  setupSideThumbs () {
+    if (!this.hasSideThumbs) return
+
+    this.updateThumbsHeight = () => {
+      if (!this.desktopThumbs.matches) return
+      this.setThumbsHeight()
+      this.thumbs.update()
+    }
+    this.thumbsResizeObserver = new ResizeObserver(this.updateThumbsHeight)
+    this.thumbsResizeObserver.observe(this.mainWrapper)
+
+    this.onThumbsBreakpointChange = () => {
+      if (this.desktopThumbs.matches) this.setThumbsHeight()
+      else this.thumbs.el.style.removeProperty('height')
+
+      this.thumbs.changeDirection(this.desktopThumbs.matches ? 'vertical' : 'horizontal')
+      this.thumbs.update()
+    }
+    this.desktopThumbs.addEventListener('change', this.onThumbsBreakpointChange)
+    this.updateThumbsHeight()
+  }
+
+  disconnectedCallback () {
+    this.thumbsResizeObserver?.disconnect()
+    if (this.onThumbsBreakpointChange) {
+      this.desktopThumbs.removeEventListener('change', this.onThumbsBreakpointChange)
+    }
   }
 
   thumbsOptions () {
     /** @type {SwiperOptions} */
     const options = {
       slidesPerView: Number(this.dataset.thumbsPerView),
-      spaceBetween: 10
+      spaceBetween: 10,
+      direction: this.hasSideThumbs && this.desktopThumbs.matches ? 'vertical' : 'horizontal'
     }
     return options
   }

@@ -14,7 +14,7 @@
   {{ 'image' | placeholder_svg_tag: 'img-thumbnail' }}
 {% elsif block != nil %}
   <product-media-gallery
-    class="product-media-gallery"
+    class="product-media-gallery {% if has_side_thumbs %}product-media-gallery--side-thumbs{% endif %}"
     data-product-id="{{ product.id }}"
     data-initial-slide="{{ initial_slide }}"
     data-speed="{{ block.settings.speed }}"

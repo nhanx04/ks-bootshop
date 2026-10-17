@@ -1,9 +1,13 @@
 {% liquid
   assign variants_json = product.variants | json
   assign has_customization = false
+  assign has_side_thumbs = false
   for block in section.blocks
     if block.type == 'custom_text' or block.type == 'custom_image'
       assign has_customization = true
+    endif
+    if block.type == 'media_gallery' and block.settings.show_thumbs != 'hide' and product.media.size > 1
+      assign has_side_thumbs = true
     endif
   endfor
 %}
@@ -37,10 +41,10 @@
         {{ 'general.accessibility.skip_product_content' | t }}
       </a>      
       <div class="row">
-        <div class="col-desktop-9 mb-5 mb-desktop-0">
-          {% render 'product-block-media-gallery' %}
+        <div class="col-desktop-9 product-main-media {% if has_side_thumbs %}product-main-media--with-thumbs{% endif %} mb-5 mb-desktop-0">
+          {% render 'product-block-media-gallery', has_side_thumbs: has_side_thumbs %}
         </div>
-        <div class="col-desktop-9">
+        <div class="col-desktop-9 product-main-details">
           <div id="product-inner-{{ product.id }}">
             <product-form>
               {% form 'product', product, data-productid: product.id, data-variants: variants_json %}
