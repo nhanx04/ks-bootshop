@@ -27,20 +27,17 @@
     {% if section.settings.show_process_image %}
       <div class="process-image-frame">
         {% if section.settings.process_image != blank %}
-          <img
-            src="{{ section.settings.process_image | image_url: width: 3800 }}"
-            srcset="
-              {{ section.settings.process_image | image_url: width: 1200 }} 1200w,
-              {{ section.settings.process_image | image_url: width: 1800 }} 1800w,
-              {{ section.settings.process_image | image_url: width: 2400 }} 2400w,
-              {{ section.settings.process_image | image_url: width: 3000 }} 3000w,
-              {{ section.settings.process_image | image_url: width: 3800 }} 3800w"
-            sizes="(max-width: 600px) calc(100vw - 2rem), 100vw"
-            alt="{{ section.settings.process_image.alt | default: section.settings.header_title | escape }}"
-            width="{{ section.settings.process_image.width }}"
-            height="{{ section.settings.process_image.height }}"
-            loading="lazy"
-            decoding="async">
+          {% liquid
+            assign process_image_width = section.settings.process_image.width | at_most: 5760
+            assign process_image_widths = ',800,1200,1600,2000,2400,3000,3800,4800,5760,'
+            assign process_image_width_token = process_image_width | prepend: ',' | append: ','
+            unless process_image_widths contains process_image_width_token
+              assign process_image_widths = process_image_widths | append: process_image_width | append: ','
+            endunless
+            assign process_image_widths = process_image_widths | remove_first: ',' | remove_last: ','
+            assign process_image_alt = section.settings.process_image.alt | default: section.settings.header_title
+          %}
+          {{ section.settings.process_image | image_url: width: process_image_width | image_tag: widths: process_image_widths, sizes: '100vw', alt: process_image_alt, loading: 'lazy', decoding: 'async' }}
         {% else %}
           <div class="process-image-placeholder">
             <span>Upload your process image in the Theme Editor</span>

@@ -15,17 +15,17 @@
         "slide_TddqxQ": {
           "type": "slide",
           "settings": {
-            "img_mobile": "shopify://shop_images/Noi_dung_doan_van_ban_cua_ban_2.png",
-            "img_desktop": "shopify://shop_images/Noi_dung_doan_van_ban_cua_ban_dc531105-50ac-4d2b-a550-77d9980541c4.png",
+            "img_mobile": "shopify://shop_images/hero_carousel_36534a48-f674-41f8-9e95-7808d6458cf5.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_4.png",
             "overlay_color": "#000000",
             "overlay_opacity": 0,
             "overlay_blur": 0,
             "subtitle": "",
             "title": "",
             "description": "",
-            "btn_primary_text": "Browse Gift Ideas",
+            "btn_primary_text": "",
             "btn_primary_url": "/collections/all",
-            "btn_secondary_text": "Contact Us",
+            "btn_secondary_text": "",
             "btn_secondary_url": "shopify://policies/contact-information"
           }
         },
@@ -49,6 +49,78 @@
       "block_order": [
         "slide_TddqxQ",
         "slide_Q4UPQq"
+      ],
+      "settings": {
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-white",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "carousel_controls": true,
+        "carousel_indicators": true,
+        "carousel_transition": "slide carousel-fade",
+        "carousel_transition_duration": 500,
+        "carousel_autoplay": 0,
+        "carousel_effect": "",
+        "media_mobile_height": 500,
+        "media_desktop_height": 400,
+        "media_adapt": true,
+        "media_full": false,
+        "caption_max_width": "900",
+        "caption_position": "carousel-caption-center",
+        "subtitle_font_size": "fs-md",
+        "title_font_size": "h2",
+        "description_font_size": "fs-lg",
+        "btn_primary_color": "btn-primary",
+        "btn_secondary_color": "btn-secondary",
+        "btn_font_size": "fs-md",
+        "pt": 0,
+        "pb": 8
+      }
+    },
+    "hero_carousel_CNYdCR": {
+      "type": "hero-carousel",
+      "blocks": {
+        "slide_4EercG": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify://shop_images/hero_carousel_36534a48-f674-41f8-9e95-7808d6458cf5.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_3.png",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_blur": 0,
+            "subtitle": "",
+            "title": "",
+            "description": "",
+            "btn_primary_text": "",
+            "btn_primary_url": "/collections/all",
+            "btn_secondary_text": "",
+            "btn_secondary_url": "shopify://policies/contact-information"
+          }
+        },
+        "slide_gc89tB": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "overlay_color": "#000000",
+            "overlay_opacity": 10,
+            "overlay_blur": 2,
+            "subtitle": "Personalized Whiskey Gifts",
+            "title": "Custom Engraved Decanter Sets Made for Their Story",
+            "description": "<p>Turn a favorite photo, name, badge, family moment, or inside joke into a keepsake decanter set they will actually use and proudly display.</p>",
+            "btn_primary_text": "Shop Best Sellers",
+            "btn_primary_url": "/collections/latest",
+            "btn_secondary_text": "Design Your Gift",
+            "btn_secondary_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "slide_4EercG",
+        "slide_gc89tB"
       ],
       "settings": {
         "bg_color": "bg-body",
@@ -109,10 +181,10 @@
         ],
         "collection": "latest",
         "show_feature_card": true,
-        "feature_image": "shopify://shop_images/hero_1.png",
+        "feature_image": "shopify://shop_images/db6eee8d-f969-4d4c-88ea-745ef83b9bac.png",
         "feature_title": "Best Sellers",
         "feature_link": "/collections/latest",
-        "feature_button_label": "Xem ngay",
+        "feature_button_label": "Shop now",
         "show_view_all": true,
         "view_all_label": "Xem tất cả",
         "limit": 8,
@@ -131,7 +203,7 @@
         "slider_autoplay": 0,
         "breakpoint_mobile": 2,
         "breakpoint_tablet": 2,
-        "breakpoint_desktop": 3,
+        "breakpoint_desktop": 4,
         "pt": 10,
         "pb": 11
       }
@@ -690,7 +762,7 @@
           "whiskey-ang-cigar-decanter-set"
         ],
         "collection": "latest",
-        "show_feature_card": true,
+        "show_feature_card": false,
         "feature_title": "Explore Products",
         "feature_link": "/collections/latest",
         "feature_button_label": "Xem ngay",
@@ -710,9 +782,9 @@
         "slider_scrollbar": false,
         "slider_partial_slides_mobile": false,
         "slider_autoplay": 0,
-        "breakpoint_mobile": 1,
+        "breakpoint_mobile": 2,
         "breakpoint_tablet": 2,
-        "breakpoint_desktop": 3,
+        "breakpoint_desktop": 4,
         "pt": 0,
         "pb": 11
       }
@@ -965,6 +1037,7 @@
   },
   "order": [
     "hero_carousel_CmDneU",
+    "hero_carousel_CNYdCR",
     "featured_products_nXJKQn",
     "richtext_4miPYL",
     "richtext_AtYwxr",

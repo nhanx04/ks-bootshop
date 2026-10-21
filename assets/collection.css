@@ -21,6 +21,16 @@
   border-bottom-style: solid;
 }
 
+.collection-products > .container {
+  width: calc(100% - var(--bs-container-side-gutter));
+}
+
+@media (max-width: 599px) {
+  .collection-products > .container {
+    padding-inline: 3px;
+  }
+}
+
 .product-list {
   list-style: none;
   padding: 0;

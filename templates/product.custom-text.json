@@ -256,9 +256,9 @@
         "slider_scrollbar": true,
         "slider_partial_slides_mobile": true,
         "slider_autoplay": 0,
-        "breakpoint_mobile": 1,
+          "breakpoint_mobile": 2,
         "breakpoint_tablet": 2,
-        "breakpoint_desktop": 4,
+          "breakpoint_desktop": 5,
         "pt": 2,
         "pb": 11
       }
