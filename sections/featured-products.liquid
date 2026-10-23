@@ -85,12 +85,12 @@
   <div
     id="featured-products-{{ section.id }}"
     class="featured-products featured-products-recommendations {{ section.settings.bg_color }} {{ section.settings.bg_gradient }} {{ section.settings.text_color }} {{ section.settings.border_top_width | prepend: 'border-top-' }} {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }} {{ section.settings.border_color }} {{ section.settings.pt | prepend: 'pt-' }} {{ section.settings.pb | prepend: 'pb-' }}"
-    style="--bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }}; --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};">
+    style="--bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }}; --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }}; --featured-section-gap: {{ section.settings.section_gap | default: 0 }}px;">
 {% else %}
   <swiper-slider
     id="featured-products-{{ section.id }}"
     class="featured-products swiper-slider {{ section.settings.bg_color }} {{ section.settings.bg_gradient }} {{ section.settings.text_color }} {{ section.settings.border_top_width | prepend: 'border-top-' }} {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }} {{ section.settings.border_color }} {{ section.settings.pt | prepend: 'pt-' }} {{ section.settings.pb | prepend: 'pb-' }}"
-    style="--bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }}; --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};"
+    style="--bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }}; --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }}; --featured-section-gap: {{ section.settings.section_gap | default: 0 }}px;"
     data-section-id="{{ section.id }}"
     data-slider-speed="{{ section.settings.slider_speed }}"
     data-slider-navigation="{{ section.settings.slider_navigation }}"
@@ -540,6 +540,16 @@
       "max": 20,
       "step": 1,
       "default": 10
+    },
+    {
+      "type": "range",
+      "id": "section_gap",
+      "label": "Space after product strip",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
     }
   ],
   "disabled_on": {

@@ -46,7 +46,7 @@
         "border_color": "border-body",
         "border_opacity": 100,
         "container_max_width": "",
-        "limit": 48,
+        "limit": 50,
         "show_product_count": true,
         "show_filters": true,
         "filters_btn_color": "btn-outline-secondary",

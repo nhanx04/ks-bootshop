@@ -8,7 +8,7 @@
     {{ section.settings.border_top_width | prepend: 'border-top-' }}
     {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }}
     {{ section.settings.border_color }} 
-    {{ section.settings.pb | prepend: 'pb-' }} 
+    {{ section.settings.pt | prepend: 'pt-' }}
     {{ section.settings.pb | prepend: 'pb-' }}
   "
   style="
@@ -40,6 +40,10 @@
           class="carousel-item {% if forloop.first %}active{% endif %}" 
           data-index="{{ forloop.index0 }}" 
           {{ block.shopify_attributes }}>
+          <a
+            class="hero-slide-link"
+            href="{{ block.settings.image_link | default: block.settings.btn_primary_url | default: routes.all_products_collection_url }}"
+            aria-label="Shop all products">
           <div 
             class="media-wrapper" 
             style="
@@ -72,6 +76,7 @@
               {{ 'lifestyle-' | append: current | placeholder_svg_tag }}
             {% endif %}
           </div>
+          </a>
           <div class="carousel-caption {{ section.settings.caption_position }}">
             <div 
               class="carousel-caption-inner" 
@@ -507,6 +512,12 @@
           "type": "image_picker",
           "id": "img_desktop",
           "label": "Image - desktop"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link",
+          "info": "Clicking anywhere on the image opens this page. Defaults to the primary button URL or All Products."
         },
         {
           "type": "header",

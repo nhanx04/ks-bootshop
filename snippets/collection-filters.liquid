@@ -30,7 +30,13 @@
                 data-bs-target="#filters-collapse-{{ forloop.index }}" 
                 aria-expanded="true" 
                 aria-controls="filters-collapse-{{ forloop.index }}">
-                {{ filter.label }}
+                {% if filter.type == 'price_range' %}
+                  Price
+                {% elsif filter.param_name contains 'availability' or filter.label == 'Tính khả dụng' %}
+                  Availability
+                {% else %}
+                  {{ filter.label | escape }}
+                {% endif %}
                 {% render 'svg-icons', icon: 'chevron-down', size: 18 %}
               </button>
               <div id="filters-collapse-{{ forloop.index }}" class="collapse show">
@@ -171,9 +177,3 @@
     </div>
   </collection-filters>
 </div>
-
-
-
-
-      
-      
