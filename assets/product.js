@@ -206,8 +206,15 @@ class ProductMediaGallery extends HTMLElement {
     this.main = new window.Swiper(this.querySelector('.swiper-main'), this.mainOptions())
 
     this.main.slideTo(initialSlide)
+    this.main.on('slideChange', () => {
+      window.requestAnimationFrame(() => {
+        const visibleThumbs = Number(this.dataset.thumbsPerView) || 5
+        this.thumbs.slideTo(Math.max(0, this.main.activeIndex - Math.floor(visibleThumbs / 2)))
+      })
+    })
 
     this.setupSideThumbs()
+    this.setupThumbNavigation()
     this.setStickyPosition()
     this.listenVariantChange()
   }
@@ -224,6 +231,7 @@ class ProductMediaGallery extends HTMLElement {
       if (!this.desktopThumbs.matches) return
       this.setThumbsHeight()
       this.thumbs.update()
+      this.updateThumbNavigation()
     }
     this.thumbsResizeObserver = new ResizeObserver(this.updateThumbsHeight)
     this.thumbsResizeObserver.observe(this.mainWrapper)
@@ -234,13 +242,50 @@ class ProductMediaGallery extends HTMLElement {
 
       this.thumbs.changeDirection(this.desktopThumbs.matches ? 'vertical' : 'horizontal')
       this.thumbs.update()
+      this.updateThumbNavigation()
     }
     this.desktopThumbs.addEventListener('change', this.onThumbsBreakpointChange)
     this.updateThumbsHeight()
   }
 
+  setupThumbNavigation () {
+    if (!this.hasSideThumbs) return
+
+    this.thumbPrev = this.querySelector('.product-thumbs-prev')
+    this.thumbNext = this.querySelector('.product-thumbs-next')
+
+    this.thumbPrev.addEventListener('click', () => this.thumbs.slidePrev())
+    this.thumbNext.addEventListener('click', () => this.thumbs.slideNext())
+    this.thumbs.on('slideChange', () => this.updateThumbNavigation())
+    this.thumbs.on('update', () => this.updateThumbNavigation())
+
+    this.onThumbsWheel = (event) => {
+      if (!this.desktopThumbs.matches || event.ctrlKey || !event.deltaY) return
+
+      const next = event.deltaY > 0
+      if (next ? this.thumbs.isEnd : this.thumbs.isBeginning) return
+
+      event.preventDefault()
+      if (next) this.thumbs.slideNext()
+      else this.thumbs.slidePrev()
+    }
+    this.thumbs.el.addEventListener('wheel', this.onThumbsWheel, { passive: false })
+    this.updateThumbNavigation()
+  }
+
+  updateThumbNavigation () {
+    if (!this.thumbPrev || !this.thumbNext) return
+
+    const show = this.desktopThumbs.matches && !this.thumbs.isLocked
+    this.thumbPrev.hidden = !show || this.thumbs.isBeginning
+    this.thumbNext.hidden = !show || this.thumbs.isEnd
+  }
+
   disconnectedCallback () {
     this.thumbsResizeObserver?.disconnect()
+    if (this.onThumbsWheel) {
+      this.thumbs.el.removeEventListener('wheel', this.onThumbsWheel)
+    }
     if (this.onThumbsBreakpointChange) {
       this.desktopThumbs.removeEventListener('change', this.onThumbsBreakpointChange)
     }

@@ -1,12 +1,9 @@
 {% liquid 
   assign block = section.blocks | where: 'type', 'media_gallery' | first
 
-  assign current_variant = product.selected_or_first_available_variant
-
-  if current_variant.featured_image
-    assign initial_slide = product.selected_or_first_available_variant.featured_media.position | minus: 1
-  else
-    assign initial_slide = 0
+  assign initial_slide = 0
+  if product.selected_variant and product.selected_variant.featured_media
+    assign initial_slide = product.selected_variant.featured_media.position | minus: 1
   endif
 %}
 
@@ -54,6 +51,7 @@
       </div>
     </div>
     <div 
+      id="product-thumbs-{{ product.id }}"
       class="swiper-thumbs swiper mt-4" 
       data-show-thumbs="{{ block.settings.show_thumbs }}"
       data-controls-color="{{ block.settings.controls_color }}"
@@ -72,5 +70,13 @@
         {% endfor %}
       </div>
     </div>
+    {% if has_side_thumbs %}
+      <button type="button" class="product-thumbs-nav product-thumbs-prev" aria-label="Scroll product photos up" aria-controls="product-thumbs-{{ product.id }}" hidden>
+        {% render 'svg-icons', icon: 'chevron-up', size: 20 %}
+      </button>
+      <button type="button" class="product-thumbs-nav product-thumbs-next" aria-label="Scroll product photos down" aria-controls="product-thumbs-{{ product.id }}" hidden>
+        {% render 'svg-icons', icon: 'chevron-down', size: 20 %}
+      </button>
+    {% endif %}
   </product-media-gallery>
 {% endif %}

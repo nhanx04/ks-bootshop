@@ -102,8 +102,53 @@
   }
 }
 
-.nav-desktop-menu .nav-item {
-  padding: 0 .075rem;
+#navbar-desktop .nav-desktop-menu {
+  gap: var(--navbar-menu-gap, 24px);
+  --bs-nav-link-padding-x: 0px;
+  --bs-nav-link-font-weight: var(--navbar-menu-weight, 400);
+  --bs-nav-link-color: var(--navbar-menu-color, var(--bs-secondary));
+  --bs-nav-link-hover-color: var(--navbar-menu-color, var(--bs-secondary));
+  color: var(--navbar-menu-color, var(--bs-secondary));
+}
+
+#navbar-desktop .nav-desktop-menu > .nav-item > .nav-link,
+#navbar-desktop .nav-desktop-menu .navbar-mega-trigger > .nav-link {
+  position: relative;
+  color: var(--navbar-menu-color, var(--bs-secondary));
+  font-weight: var(--navbar-menu-weight, 400);
+  font-style: var(--navbar-menu-style, normal);
+}
+
+#navbar-desktop .nav-menu-new-badge {
+  position: absolute;
+  top: -.65rem;
+  right: -.65rem;
+  padding: .2rem .45rem .2rem .6rem;
+  background: #0049bd;
+  color: #fff;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+  font-size: .55rem;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: .06em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+#navbar-desktop .nav-menu-holiday-sale {
+  color: #e63e68;
+}
+
+#navbar-desktop .nav-desktop-menu > .nav-menu-holiday-sale > .nav-link,
+#navbar-desktop .nav-desktop-menu .nav-menu-holiday-sale .navbar-mega-trigger > .nav-link,
+#navbar-desktop .nav-desktop-menu > .nav-menu-holiday-sale > .nav-link:hover,
+#navbar-desktop .nav-desktop-menu .nav-menu-holiday-sale .navbar-mega-trigger > .nav-link:hover {
+  color: #e63e68;
+}
+
+#navbar-desktop .nav-menu-sparkle {
+  font-style: normal;
 }
 
 #navbar-desktop .nav-desktop-menu .nav-link:focus,
@@ -130,8 +175,8 @@
 #navbar-desktop .navbar-mega-trigger.active::before {
   content: '';
   position: absolute;
-  left: .75rem;
-  right: .75rem;
+  left: 0;
+  right: 0;
   bottom: 0;
   border-bottom: 2px solid currentColor;
 }
@@ -388,8 +433,8 @@ body.navbar-dropdown-open #footer-group::after {
 }
 
 .page-type-index .hero-carousel .carousel {
-  width: calc(100% - var(--bs-container-side-gutter) - 1.5rem);
-  margin-inline: auto;
+  width: 100%;
+  margin-inline: 0;
 }
 
 .hero-carousel .hero-slide-link {
@@ -402,12 +447,6 @@ body.navbar-dropdown-open #footer-group::after {
 
 .hero-carousel .carousel-caption a {
   pointer-events: auto;
-}
-
-@media (max-width: 599px) {
-  .page-type-index .hero-carousel .carousel {
-    width: calc(100% - var(--bs-container-side-gutter) - 6px);
-  }
 }
 
 .hero-carousel .media-wrapper img,

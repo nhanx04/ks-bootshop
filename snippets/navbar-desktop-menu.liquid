@@ -1,5 +1,20 @@
 <ul class="nav-desktop-menu nav justify-content-center">
   {% for link in linklists[block.settings.main_menu].links %}
+    {% assign menu_handle = link.title | handleize %}
+    {% assign is_new_products_link = false %}
+    {% if menu_handle == 'new-products' or link.url contains '/collections/new-products' %}
+      {% assign is_new_products_link = true %}
+    {% endif %}
+    {% assign is_holiday_sale_link = false %}
+    {% if menu_handle == 'holiday-sale' or menu_handle == 'holiday-sales' or link.url contains '/collections/holiday-sale' %}
+      {% assign is_holiday_sale_link = true %}
+    {% endif %}
+    {% capture menu_label %}
+      {% if is_holiday_sale_link %}<span class="nav-menu-sparkle" aria-hidden="true">✨</span>{% endif %}
+      <span class="nav-menu-label-text">{% if is_holiday_sale_link %}Holiday Sale{% else %}{{ link.title | escape }}{% endif %}</span>
+      {% if is_holiday_sale_link %}<span class="nav-menu-sparkle" aria-hidden="true">✨</span>{% endif %}
+      {% if is_new_products_link %}<span class="nav-menu-new-badge" aria-hidden="true">NEW</span>{% endif %}
+    {% endcapture %}
     {% assign is_products_link = false %}
     {% assign is_collections_link = false %}
     {% if link.type == 'catalog_link' or link.url == routes.all_products_collection_url %}
@@ -18,11 +33,11 @@
     {% endif %}
 
     {% if is_products_link or is_collections_link %}
-      <li class="nav-item navbar-mega-item">
+      <li class="nav-item navbar-mega-item{% if is_holiday_sale_link %} nav-menu-holiday-sale{% endif %}">
         <div class="navbar-mega-trigger {% if is_mega_active %}active{% endif %}">
           <a class="nav-link {% if is_mega_active %}active{% endif %}"
             href="{% if is_products_link %}{{ routes.all_products_collection_url }}{% else %}{{ routes.collections_url }}{% endif %}">
-            {{ link.title | escape }}
+            {{ menu_label }}
           </a>
           <button class="navbar-mega-toggle" type="button"
             aria-label="Open {{ link.title | escape }} menu"
@@ -70,18 +85,18 @@
         </div>
       </li>
     {% else %}
-      <li class="nav-item {% if link.links %}dropdown{% endif %}">
+      <li class="nav-item {% if link.links %}dropdown{% endif %}{% if is_holiday_sale_link %} nav-menu-holiday-sale{% endif %}">
         {% if link.links == blank %}
           <a class="nav-link {% if link.active %}active{% endif %}"
             href="{{ link.url }}"
             aria-current="{% if link.active %}page{% endif %}">
-            {{ link.title }}
+            {{ menu_label }}
           </a>
         {% else %}
           <a class="nav-link dropdown-toggle {% if link.child_active %}active{% endif %}"
             href="#" data-bs-toggle="dropdown" data-bs-display="static"
             aria-expanded="false" role="button">
-            {{ link.title }}
+            {{ menu_label }}
           </a>
           <ul class="dropdown-menu">
             {% for child_link in link.links %}

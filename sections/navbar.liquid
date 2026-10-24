@@ -12,6 +12,10 @@
   style="
     --bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }};
     --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};
+    --navbar-menu-gap: {{ section.settings.menu_gap }}px;
+    --navbar-menu-weight: {{ section.settings.menu_font_weight }};
+    --navbar-menu-style: {{ section.settings.menu_font_style }};
+    --navbar-menu-color: {{ section.settings.menu_color | default: settings.color_secondary }};
   ">
   {% for block in section.blocks %}
     {% if block.type == 'mobile' %}
@@ -94,13 +98,13 @@
           style="max-width: {{ block.settings.container_max_width | append: 'px' }};">
           <div
             class="row align-items-center flex-grow-1">
-            <div class="col-4">
+            <div class="col-2">
               {% render 'navbar-logo', block: block %}
             </div>
-            <div class="col-10">
+            <div class="col-14">
               {% render 'navbar-desktop-menu', block: block %}
             </div>
-            <div class="col-4">
+            <div class="col-2">
               {% render 'navbar-desktop-icons', block: block %}
             </div>
           </div>
@@ -210,6 +214,49 @@
       "step": 1,
       "default": 100,
       "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Desktop menu"
+    },
+    {
+      "type": "range",
+      "id": "menu_gap",
+      "label": "Space between menu items",
+      "min": 0,
+      "max": 64,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "menu_font_weight",
+      "label": "Menu font weight",
+      "default": "400",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "menu_font_style",
+      "label": "Menu font style",
+      "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "italic", "label": "Italic" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "menu_color",
+      "label": "Menu color",
+      "default": "#000000"
     },
     {
       "type": "select",

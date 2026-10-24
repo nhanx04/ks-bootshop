@@ -12,10 +12,10 @@
     "blog_header_7BFLtm": {
       "type": "blog-header",
       "settings": {
-        "bg_color": "bg-primary",
-        "bg_opacity": 5,
+        "bg_color": "bg-white",
+        "bg_opacity": 100,
         "bg_gradient": "",
-        "text_color": "text-body",
+        "text_color": "text-secondary",
         "border_top_width": 0,
         "border_bottom_width": 1,
         "border_color": "border-body",

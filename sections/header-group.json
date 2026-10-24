@@ -90,6 +90,10 @@
         "border_bottom_width": 0,
         "border_color": "border-body",
         "border_opacity": 100,
+        "menu_gap": 15,
+        "menu_font_weight": "500",
+        "menu_font_style": "normal",
+        "menu_color": "#000000",
         "shadow": "shadow-sm"
       }
     }
