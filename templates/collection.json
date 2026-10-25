@@ -9,6 +9,80 @@
  */
 {
   "sections": {
+    "hero_carousel_qCqEBY": {
+      "type": "hero-carousel",
+      "blocks": {
+        "slide_btD6eq": {
+          "type": "slide",
+          "settings": {
+            "img_desktop": "shopify://shop_images/hero_carousel_14.png",
+            "image_link": "/collections/all",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_blur": 0,
+            "subtitle": "",
+            "title": "",
+            "description": "",
+            "btn_primary_text": "",
+            "btn_primary_url": "/collections/all",
+            "btn_secondary_text": "",
+            "btn_secondary_url": "shopify://policies/contact-information"
+          }
+        },
+        "slide_F7P8T6": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 10,
+            "overlay_blur": 2,
+            "subtitle": "Personalized Whiskey Gifts",
+            "title": "Custom Engraved Decanter Sets Made for Their Story",
+            "description": "<p>Turn a favorite photo, name, badge, family moment, or inside joke into a keepsake decanter set they will actually use and proudly display.</p>",
+            "btn_primary_text": "Shop Best Sellers",
+            "btn_primary_url": "/collections/latest",
+            "btn_secondary_text": "Design Your Gift",
+            "btn_secondary_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "slide_btD6eq",
+        "slide_F7P8T6"
+      ],
+      "settings": {
+        "collection_handle": "all",
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-white",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "carousel_controls": true,
+        "carousel_indicators": true,
+        "carousel_transition": "slide carousel-fade",
+        "carousel_transition_duration": 500,
+        "carousel_autoplay": 0,
+        "carousel_effect": "",
+        "media_mobile_height": 500,
+        "media_desktop_height": 400,
+        "media_adapt": true,
+        "media_full": true,
+        "caption_max_width": "900",
+        "caption_position": "carousel-caption-center",
+        "subtitle_font_size": "fs-md",
+        "title_font_size": "h2",
+        "description_font_size": "fs-lg",
+        "btn_primary_color": "btn-primary",
+        "btn_secondary_color": "btn-secondary",
+        "btn_font_size": "fs-md",
+        "pt": 0,
+        "pb": 0
+      }
+    },
     "collection_header_JKf7mh": {
       "type": "collection-header",
       "settings": {
@@ -30,8 +104,8 @@
         "description_font_size": "fs-md",
         "pt": 9,
         "pb": 9,
-        "pt_desktop": 9,
-        "pb_desktop": 9
+        "pt_desktop": 6,
+        "pb_desktop": 0
       }
     },
     "collection_products_Fx3hb6": {
@@ -55,7 +129,7 @@
         "breakpoint_mobile": 2,
         "breakpoint_tablet": 3,
         "breakpoint_desktop": 5,
-        "pt": 10,
+        "pt": 5,
         "pb": 10
       }
     },
@@ -74,6 +148,7 @@
     }
   },
   "order": [
+    "hero_carousel_qCqEBY",
     "collection_header_JKf7mh",
     "collection_products_Fx3hb6",
     "da87b500-2710-4252-99e4-4bd5db55af39"

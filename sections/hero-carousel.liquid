@@ -1,3 +1,13 @@
+{% liquid
+  assign show_hero = true
+  if request.page_type == 'collection'
+    assign target_collection_handle = section.settings.collection_handle | strip | handleize
+    if target_collection_handle == blank or collection.handle != target_collection_handle
+      assign show_hero = false
+    endif
+  endif
+%}
+{% if show_hero %}
 <div 
   id="hero-carousel-{{ section.id }}" 
   class="
@@ -171,12 +181,23 @@
     })
   </script>
 {% endif %}
+{% endif %}
 
 
 {% schema %}
 {
   "name": "Hero carousel",
   "settings": [
+    {
+      "type": "header",
+      "content": "Collection pages"
+    },
+    {
+      "type": "text",
+      "id": "collection_handle",
+      "label": "Only show on collection handle",
+      "info": "Required on collection pages. Enter the final part of the collection URL, such as all. Leave empty to hide this section on collection pages. This does not affect the home page."
+    },
     {
       "type": "header",
       "content": "Styling"
