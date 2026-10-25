@@ -9,6 +9,13 @@
  */
 {
   "sections": {
+    "personalization_concepts": {
+      "type": "personalization-concepts",
+      "settings": {
+        "heading": "Personalization Concepts",
+        "intro": "Explore custom gift ideas and find a starting point for something uniquely yours."
+      }
+    },
     "blog_header_7BFLtm": {
       "type": "blog-header",
       "settings": {
@@ -66,6 +73,7 @@
     }
   },
   "order": [
+    "personalization_concepts",
     "blog_header_7BFLtm",
     "template-blog"
   ]

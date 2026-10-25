@@ -1,3 +1,4 @@
+{% unless blog.url contains '/blogs/tin-t' or blog.handle == 'personalization-concepts' %}
 {% liquid
   if shop.permanent_domain contains 'ks-'
     assign limit = 6
@@ -104,6 +105,7 @@
     </div>
   </div>
 </div>
+{% endunless %}
 
 {% schema %}
 {

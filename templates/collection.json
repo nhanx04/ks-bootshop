@@ -15,7 +15,8 @@
         "slide_btD6eq": {
           "type": "slide",
           "settings": {
-            "img_desktop": "shopify://shop_images/hero_carousel_14.png",
+            "img_mobile": "shopify://shop_images/hero_carousel_14_f069ee94-f83c-4d33-9cb0-31f166cecf6a.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_14_f069ee94-f83c-4d33-9cb0-31f166cecf6a.png",
             "image_link": "/collections/all",
             "overlay_color": "#000000",
             "overlay_opacity": 0,
@@ -53,6 +54,120 @@
       ],
       "settings": {
         "collection_handle": "all",
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-white",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "carousel_controls": true,
+        "carousel_indicators": true,
+        "carousel_transition": "slide carousel-fade",
+        "carousel_transition_duration": 500,
+        "carousel_autoplay": 0,
+        "carousel_effect": "",
+        "media_mobile_height": 500,
+        "media_desktop_height": 400,
+        "media_adapt": true,
+        "media_full": true,
+        "caption_max_width": "900",
+        "caption_position": "carousel-caption-center",
+        "subtitle_font_size": "fs-md",
+        "title_font_size": "h2",
+        "description_font_size": "fs-lg",
+        "btn_primary_color": "btn-primary",
+        "btn_secondary_color": "btn-secondary",
+        "btn_font_size": "fs-md",
+        "pt": 0,
+        "pb": 0
+      }
+    },
+    "hero_carousel_hRpHzE": {
+      "type": "hero-carousel",
+      "blocks": {
+        "slide_7it7Yy": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify://shop_images/hero_carousel_16.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_16.png",
+            "image_link": "/collections/all",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_blur": 0,
+            "subtitle": "",
+            "title": "",
+            "description": "",
+            "btn_primary_text": "",
+            "btn_primary_url": "/collections/all",
+            "btn_secondary_text": "",
+            "btn_secondary_url": "shopify://policies/contact-information"
+          }
+        }
+      },
+      "block_order": [
+        "slide_7it7Yy"
+      ],
+      "settings": {
+        "collection_handle": "new-arrivals",
+        "bg_color": "bg-body",
+        "bg_opacity": 100,
+        "bg_gradient": "",
+        "text_color": "text-white",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "border_color": "border-body",
+        "border_opacity": 100,
+        "carousel_controls": true,
+        "carousel_indicators": true,
+        "carousel_transition": "slide carousel-fade",
+        "carousel_transition_duration": 500,
+        "carousel_autoplay": 0,
+        "carousel_effect": "",
+        "media_mobile_height": 500,
+        "media_desktop_height": 400,
+        "media_adapt": true,
+        "media_full": true,
+        "caption_max_width": "900",
+        "caption_position": "carousel-caption-center",
+        "subtitle_font_size": "fs-md",
+        "title_font_size": "h2",
+        "description_font_size": "fs-lg",
+        "btn_primary_color": "btn-primary",
+        "btn_secondary_color": "btn-secondary",
+        "btn_font_size": "fs-md",
+        "pt": 0,
+        "pb": 0
+      }
+    },
+    "hero_carousel_adPxpr": {
+      "type": "hero-carousel",
+      "blocks": {
+        "slide_PhTC3i": {
+          "type": "slide",
+          "settings": {
+            "img_mobile": "shopify://shop_images/hero_carousel_18.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_18.png",
+            "image_link": "/collections/all",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_blur": 0,
+            "subtitle": "",
+            "title": "",
+            "description": "",
+            "btn_primary_text": "",
+            "btn_primary_url": "/collections/all",
+            "btn_secondary_text": "",
+            "btn_secondary_url": "shopify://policies/contact-information"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PhTC3i"
+      ],
+      "settings": {
+        "collection_handle": "holiday-sale",
         "bg_color": "bg-body",
         "bg_opacity": 100,
         "bg_gradient": "",
@@ -149,6 +264,8 @@
   },
   "order": [
     "hero_carousel_qCqEBY",
+    "hero_carousel_hRpHzE",
+    "hero_carousel_adPxpr",
     "collection_header_JKf7mh",
     "collection_products_Fx3hb6",
     "da87b500-2710-4252-99e4-4bd5db55af39"

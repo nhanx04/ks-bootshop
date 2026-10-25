@@ -1,0 +1,179 @@
+{% if blog.handle == 'personalization-concepts' or blog.url contains '/blogs/tin-t' %}
+  {{ 'personalization-concepts.css' | asset_url | stylesheet_tag }}
+
+  <div class="concepts-page">
+    {% assign concept_slide_count = 0 %}
+    {% for block in section.blocks %}
+      {% if block.settings.image != blank %}
+        {% assign concept_slide_count = concept_slide_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if concept_slide_count > 0 %}
+      <div id="concepts-carousel-{{ section.id }}" class="carousel slide concepts-carousel" data-bs-ride="false" aria-label="Personalization concept inspiration">
+        <div class="carousel-inner">
+          {% assign concept_slide_index = 0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              {% assign concept_slide_alt = block.settings.image.alt | default: 'Personalization concept inspiration' %}
+              {% assign concept_slide_loading = 'lazy' %}
+              {% if concept_slide_index == 0 %}{% assign concept_slide_loading = 'eager' %}{% endif %}
+              <div class="carousel-item{% if concept_slide_index == 0 %} active{% endif %}" {{ block.shopify_attributes }}>
+                <picture>
+                  {% if block.settings.image_mobile != blank %}
+                    <source media="(max-width: 760px)" srcset="{{ block.settings.image_mobile | image_url: width: 900 }}">
+                  {% endif %}
+                  {{ block.settings.image | image_url: width: 2400 | image_tag: loading: concept_slide_loading, widths: '800, 1200, 1600, 2000, 2400', sizes: '100vw', alt: concept_slide_alt }}
+                </picture>
+              </div>
+              {% assign concept_slide_index = concept_slide_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% if concept_slide_count > 1 %}
+          <button class="carousel-control-prev" type="button" data-bs-target="#concepts-carousel-{{ section.id }}" data-bs-slide="prev" aria-label="Previous slide">
+            {% render 'svg-icons', icon: 'chevron-left', size: 24 %}
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#concepts-carousel-{{ section.id }}" data-bs-slide="next" aria-label="Next slide">
+            {% render 'svg-icons', icon: 'chevron-right', size: 24 %}
+          </button>
+        {% endif %}
+      </div>
+    {% endif %}
+    <header class="concepts-header">
+      <div class="container">
+        <h1>{{ section.settings.heading | escape }}</h1>
+        <p>{{ section.settings.intro | escape }}</p>
+      </div>
+    </header>
+
+    <section class="concepts-list" aria-labelledby="concepts-list-heading">
+      <div class="container">
+        <div class="concepts-section-heading">
+          <h2 id="concepts-list-heading">Explore the concepts</h2>
+          <p>Discover an idea you love, then make it personal.</p>
+        </div>
+
+        {% paginate blog.articles by 9 %}
+          {% if blog.articles.size > 0 %}
+            <div class="concepts-grid">
+              {% for article in blog.articles %}
+                {% assign concept_image_alt = article.image.alt | default: article.title %}
+                <article class="concepts-card">
+                  <a href="{{ article.url }}" class="concepts-card-link">
+                    <div class="concepts-card-image">
+                      {% if article.image != blank %}
+                        {{ article.image | image_url: width: 900, height: 1125, crop: 'center' | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 33vw, (min-width: 640px) 50vw, 100vw', alt: concept_image_alt }}
+                      {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'concepts-image-placeholder' }}
+                      {% endif %}
+                    </div>
+                    <div class="concepts-card-content">
+                      <h3>{{ article.title | escape }}</h3>
+                      {% if article.excerpt != blank %}
+                        <p>{{ article.excerpt | strip_html | truncatewords: 18 }}</p>
+                      {% endif %}
+                      <span class="concepts-card-action">View concept <span aria-hidden="true">↗</span></span>
+                    </div>
+                  </a>
+                </article>
+              {% endfor %}
+            </div>
+            {% render 'pagination', paginate: paginate %}
+          {% else %}
+            <div class="concepts-empty">
+              <h3>New ideas are on their way.</h3>
+              <p>Have a concept in mind already? Send it to us below.</p>
+              <a href="#share-your-idea" class="btn btn-outline-primary">Share your idea</a>
+            </div>
+          {% endif %}
+        {% endpaginate %}
+      </div>
+    </section>
+
+    <section id="share-your-idea" class="concepts-submit" aria-labelledby="concepts-submit-heading">
+      <div class="container concepts-submit-grid">
+        <div class="concepts-submit-intro">
+          <h2 id="concepts-submit-heading">Share your idea</h2>
+          <p>Tell us what you're imagining. A favorite photo, a meaningful phrase, a special date or something we haven't seen before. No polished brief needed.</p>
+          <p class="concepts-submit-note">We'll review your idea and reply by email. Sending a concept does not place an order.</p>
+        </div>
+
+        <div class="concepts-form-panel">
+          {% form 'contact', id: 'PersonalizationConceptForm' %}
+            <input type="hidden" name="contact[Inquiry type]" value="Personalization concept submission">
+            {% if form.posted_successfully? %}
+              <div class="concepts-form-success" role="status" tabindex="-1">
+                <strong>Thank you for sharing your idea.</strong>
+                <p>We've received it and will follow up by email.</p>
+              </div>
+            {% endif %}
+            {% if form.errors %}
+              <div class="concepts-form-errors" role="alert">{{ form.errors | default_errors }}</div>
+            {% endif %}
+
+            <div class="concepts-form-row">
+              <div class="concepts-field">
+                <label for="concept-name">Your name <span aria-hidden="true">*</span></label>
+                <input id="concept-name" type="text" name="contact[name]" value="{{ form.name | default: customer.name | escape }}" autocomplete="name" required>
+              </div>
+              <div class="concepts-field">
+                <label for="concept-email">Email address <span aria-hidden="true">*</span></label>
+                <input id="concept-email" type="email" name="contact[email]" value="{{ form.email | default: customer.email | escape }}" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="concepts-form-row">
+              <div class="concepts-field">
+                <label for="concept-product">Product you're thinking of</label>
+                <select id="concept-product" name="contact[Product interest]">
+                  <option value="Not sure yet">Not sure yet</option>
+                  <option value="Decanter set">Decanter set</option>
+                  <option value="Tumbler or drinkware">Tumbler or drinkware</option>
+                  <option value="Another personalized gift">Another personalized gift</option>
+                </select>
+              </div>
+              <div class="concepts-field">
+                <label for="concept-occasion">Occasion</label>
+                <input id="concept-occasion" type="text" name="contact[Occasion]" placeholder="Birthday, wedding, just because…">
+              </div>
+            </div>
+
+            <div class="concepts-field">
+              <label for="concept-idea">Describe your idea <span aria-hidden="true">*</span></label>
+              <textarea id="concept-idea" name="contact[body]" rows="6" placeholder="Who is it for? What would you like to personalize? Tell us any colors, words, photos or details you have in mind." required>{{ form.body | escape }}</textarea>
+            </div>
+            <div class="concepts-field">
+              <label for="concept-link">Inspiration link <span class="concepts-optional">Optional</span></label>
+              <input id="concept-link" type="url" name="contact[Inspiration link]" placeholder="https://example.com/your-inspiration" inputmode="url">
+            </div>
+            <button class="btn btn-primary concepts-submit-button" type="submit">Send my idea</button>
+            <p class="concepts-form-privacy">We will only use your details to respond to your idea.</p>
+          {% endform %}
+        </div>
+      </div>
+    </section>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Personalization concepts",
+  "tag": "section",
+  "class": "personalization-concepts-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Page heading", "default": "Personalization Concepts" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "Explore custom gift ideas and find a starting point for something uniquely yours." }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Carousel image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Desktop image" },
+        { "type": "image_picker", "id": "image_mobile", "label": "Mobile image (optional)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Personalization concepts" }]
+}
+{% endschema %}

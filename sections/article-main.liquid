@@ -16,6 +16,9 @@
     <div 
       class="container" 
       style="max-width: {{ section.settings.max_width }}px">
+      {% if blog.handle == 'personalization-concepts' %}
+        <a href="{{ blog.url }}" class="btn btn-link px-0 mb-4">← Back to concepts</a>
+      {% endif %}
       <h1 class="article-title title mb-4 {{ section.settings.title_font_size }}">
         {{ article.title }}
       </h1>

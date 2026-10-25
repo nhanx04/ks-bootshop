@@ -1,3 +1,4 @@
+{% unless blog.url contains '/blogs/tin-t' or blog.handle == 'personalization-concepts' %}
 <header 
   id="blog-header-{{ section.id }}"
   class="
@@ -48,6 +49,7 @@
     {% endunless %}
   </div>
 </header>
+{% endunless %}
 
 {% schema %}
 {

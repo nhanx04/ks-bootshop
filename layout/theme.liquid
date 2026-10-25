@@ -15,18 +15,26 @@
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
   {%- endunless -%}
 
+  {% liquid
+    assign display_page_title = page_title
+    if request.page_type == 'blog'
+      if blog.url contains '/blogs/tin-t' or blog.handle == 'personalization-concepts'
+        assign display_page_title = 'Personalization Concepts'
+      endif
+    endif
+  %}
   <title>
-    {{ page_title }}
+    {{ display_page_title }}
     {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
     {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    {%- unless display_page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
   </title>
 
   {% if page_description %}
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
-  {% render 'meta-tags' %}
+  {% render 'meta-tags', page_title: display_page_title %}
 
   {{ content_for_header }}
 
@@ -58,4 +66,3 @@
   %}
 </body>
 </html>
-    
