@@ -1,3 +1,9 @@
+{% assign is_concept_article = false %}
+{% if blog.handle == 'personalization-concepts' %}
+  {% assign is_concept_article = true %}
+  {{ 'concept-article.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 <article 
   id="article-main-{{ collection.id }}" 
   class="
@@ -7,9 +13,23 @@
   ">
   {% if section.settings.img_show and article.image %}
     <div class="img-wrapper mb-8">
-      <div class="container">
-        {% render 'image-url', img: article.image, size: 1600, orientation: section.settings.img_orientation, class: section.settings.img_border %}
-      </div>
+      {% if is_concept_article %}
+        {% assign concept_image_width = article.image.width | at_most: 960 %}
+        {% assign concept_image_alt = article.image.alt | default: article.title %}
+        <div class="container concept-article-image-container">
+          <img
+            src="{{ article.image | image_url: width: concept_image_width }}"
+            alt="{{ concept_image_alt | escape }}"
+            width="{{ article.image.width }}"
+            height="{{ article.image.height }}"
+            class="img-fluid concept-article-featured-image {{ section.settings.img_border }}"
+            loading="eager">
+        </div>
+      {% else %}
+        <div class="container">
+          {% render 'image-url', img: article.image, size: 1600, orientation: section.settings.img_orientation, class: section.settings.img_border %}
+        </div>
+      {% endif %}
     </div>
   {% endif %}
   <div class="article-content">

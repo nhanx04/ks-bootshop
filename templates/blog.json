@@ -11,10 +11,19 @@
   "sections": {
     "personalization_concepts": {
       "type": "personalization-concepts",
-      "settings": {
-        "heading": "Personalization Concepts",
-        "intro": "Explore custom gift ideas and find a starting point for something uniquely yours."
-      }
+      "blocks": {
+        "slide_xXgrHj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/hero_carousel_21.png",
+            "image_mobile": "shopify://shop_images/hero_carousel_21.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_xXgrHj"
+      ],
+      "settings": {}
     },
     "blog_header_7BFLtm": {
       "type": "blog-header",
@@ -33,7 +42,7 @@
         "img_overlay_opacity": 30,
         "img_overlay_blur": 5,
         "title_font_size": "h2",
-        "description": "<p>Gift ideas, personalization tips, and inspiration for creating meaningful custom decanter sets.<\/p>",
+        "description": "<p>Gift ideas, personalization tips, and inspiration for creating meaningful custom decanter sets.</p>",
         "description_font_size": "fs-md",
         "pt": 11,
         "pb": 11,

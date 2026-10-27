@@ -1,8 +1,18 @@
 {% liquid 
   assign pt = block.settings.pt | prepend: 'pt-'
   assign pb = block.settings.pb | prepend: 'pb-'
+  assign is_new_product = product.metafields.custom.is_new.value
+  assign units_sold = product.metafields.custom.units_sold.value | default: 0 | plus: 0
 %}
 
 <h1 class="product-title title mb-0 {{ block.settings.title_font_size }} {{ pt }} {{ pb }}" {{ block.shopify_attributes }}>
   {{ product.title }}
 </h1>
+{% if is_new_product == true or units_sold > 0 %}
+  <div class="product-main-highlights">
+    {% if is_new_product == true %}
+      <span class="product-new-badge badge">New</span>
+    {% endif %}
+    {% render 'product-sold-count', units_sold: units_sold %}
+  </div>
+{% endif %}

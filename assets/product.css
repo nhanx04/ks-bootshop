@@ -247,6 +247,33 @@
   line-height: 1.3;
 }
 
+.product-new-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.55rem;
+  padding: 0.32rem 0.48rem 0.32rem 0.7rem;
+  border-radius: 0;
+  background: #123bc7;
+  clip-path: polygon(0.32rem 0, 100% 0, 100% 100%, 0 100%);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.product-sold-count {
+  color: #707780;
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.product-main-highlights { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0.35rem 0 1rem; }
+
 .product-main .product-price {
   font-size: clamp(1.375rem, 1.6vw, 1.75rem) !important;
   font-weight: 700;
@@ -575,7 +602,16 @@ a:hover .product-card-img-wrapper img {
   top: 0;
 }
 
+.product-card-img-wrapper .product-new-badge {
+  top: -0.4rem;
+  right: -0.4rem;
+}
+
 .product-card-img-wrapper .product-sale-badge {
+}
+
+.product-card-img-wrapper.has-new-badge .product-sale-badge {
+  top: 1.65rem;
 }
 
 .product-card-img-wrapper .product-sale-badge[data-discount-type="percentage"] {
@@ -601,6 +637,10 @@ a:hover .product-card-img-wrapper img {
   right: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.product-card-img-wrapper.has-new-badge .product-sale-badge[data-discount-type="percentage"] {
+  top: 1.65rem;
 }
 
 .product-card-img-wrapper .product-sold-out-badge {
@@ -774,10 +814,24 @@ a:hover .product-card-img-wrapper img {
   margin-bottom: 0 !important;
 }
 
+.product-card-bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.product-card-bottom-row .product-sold-count {
+  margin-left: auto;
+  text-align: right;
+}
+
 .product-card-color-swatches {
   position: static;
   width: auto;
-  margin-top: 0.5rem;
+  margin-top: 0;
   justify-content: flex-start;
   gap: 0.25rem;
 }
@@ -1071,7 +1125,15 @@ a:hover .product-card-img-wrapper img {
 
   .product-card-color-swatches {
     gap: 0.2rem;
-    margin-top: 0.35rem;
+  }
+
+  .product-card-bottom-row {
+    padding-top: 0.35rem;
+  }
+
+  .product-card-img-wrapper .product-new-badge {
+    top: -0.3rem;
+    right: -0.3rem;
   }
 }
 

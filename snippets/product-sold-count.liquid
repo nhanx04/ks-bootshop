@@ -1,0 +1,7 @@
+{% if units_sold > 0 %}
+  {% assign sold_display_count = units_sold %}
+  {% if units_sold >= 100 %}
+    {% assign sold_display_count = units_sold | divided_by: 100 | times: 100 %}
+  {% endif %}
+  <span class="product-sold-count">{{ sold_display_count }}{% if units_sold >= 100 %}+{% endif %} sold</span>
+{% endif %}

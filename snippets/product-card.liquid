@@ -3,13 +3,18 @@
 {% endcomment %}
 
 {% assign product_url = product.url | within: collection %}
+{% assign is_new_product = product.metafields.custom.is_new.value %}
+{% assign units_sold = product.metafields.custom.units_sold.value | default: 0 | plus: 0 %}
 {% assign requires_personalization = false %}
 {% if product.template_suffix == 'custom-text' or product.template_suffix == 'custom-image' or product.template_suffix == 'custom-image-text' %}
   {% assign requires_personalization = true %}
 {% endif %}
 <div class="product-card {{ settings.product_card_text_align }}">
-  <div class="product-card-img-wrapper">
+  <div class="product-card-img-wrapper{% if is_new_product == true %} has-new-badge{% endif %}">
     <a href="{{ product_url }}" class="product-card-image-link" aria-label="{{ product.title | escape }}">
+      {% if is_new_product == true %}
+        <span class="product-new-badge badge">New</span>
+      {% endif %}
       {% unless product.available %}
         <span class="product-sold-out-badge badge">{{ 'product.sold_out' | t }}</span>
       {% else %}
@@ -44,27 +49,30 @@
     <h3 class="product-card-title product-title {{ settings.product_card_title_font_size }}">{{ product.title }}</h3>
     {% render 'product-card-price', product: product %}
   </a>
-  {% for option in product.options_with_values %}
-    {% assign option_name = option.name | downcase %}
-    {% if option_name contains 'color' or option_name contains 'colour' or option_name contains 'màu' %}
-      <div class="product-card-color-swatches" aria-label="{{ option.name | escape }}">
-        {% for option_value in option.values limit: 5 %}
-          {% assign swatch_variant = option_value.variant | default: product.selected_or_first_available_variant %}
-          {% assign swatch_image = option_value.swatch.image | default: swatch_variant.featured_image %}
-          {% assign swatch_url = option_value.product_url | default: product_url %}
-          <a class="product-card-swatch{% if option_value.selected %} is-selected{% endif %}" href="{{ swatch_url }}{% unless option_value.product_url %}?variant={{ swatch_variant.id }}{% endunless %}" title="{{ option_value.name | escape }}" aria-label="{{ option.name | escape }}: {{ option_value.name | escape }}" {% if option_value.swatch.color %}style="--swatch-color: {{ option_value.swatch.color | escape }}"{% endif %}>
-            {% if swatch_image %}
-              <img src="{{ swatch_image | image_url: width: 60, height: 60, crop: 'center' }}" alt="" width="28" height="28" loading="lazy">
-            {% elsif option_value.swatch.color %}
-              <span class="product-card-swatch-color"></span>
-            {% else %}
-              <span class="product-card-swatch-label">{{ option_value.name | slice: 0, 1 }}</span>
-            {% endif %}
-          </a>
-        {% endfor %}
-        {% if option.values.size > 5 %}<span class="product-card-swatch-more">+{{ option.values.size | minus: 5 }}</span>{% endif %}
-      </div>
-      {% break %}
-    {% endif %}
-  {% endfor %}
+  <div class="product-card-bottom-row">
+    {% for option in product.options_with_values %}
+      {% assign option_name = option.name | downcase %}
+      {% if option_name contains 'color' or option_name contains 'colour' or option_name contains 'màu' %}
+        <div class="product-card-color-swatches" aria-label="{{ option.name | escape }}">
+          {% for option_value in option.values limit: 5 %}
+            {% assign swatch_variant = option_value.variant | default: product.selected_or_first_available_variant %}
+            {% assign swatch_image = option_value.swatch.image | default: swatch_variant.featured_image %}
+            {% assign swatch_url = option_value.product_url | default: product_url %}
+            <a class="product-card-swatch{% if option_value.selected %} is-selected{% endif %}" href="{{ swatch_url }}{% unless option_value.product_url %}?variant={{ swatch_variant.id }}{% endunless %}" title="{{ option_value.name | escape }}" aria-label="{{ option.name | escape }}: {{ option_value.name | escape }}" {% if option_value.swatch.color %}style="--swatch-color: {{ option_value.swatch.color | escape }}"{% endif %}>
+              {% if swatch_image %}
+                <img src="{{ swatch_image | image_url: width: 60, height: 60, crop: 'center' }}" alt="" width="28" height="28" loading="lazy">
+              {% elsif option_value.swatch.color %}
+                <span class="product-card-swatch-color"></span>
+              {% else %}
+                <span class="product-card-swatch-label">{{ option_value.name | slice: 0, 1 }}</span>
+              {% endif %}
+            </a>
+          {% endfor %}
+          {% if option.values.size > 5 %}<span class="product-card-swatch-more">+{{ option.values.size | minus: 5 }}</span>{% endif %}
+        </div>
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% render 'product-sold-count', units_sold: units_sold %}
+  </div>
 </div>

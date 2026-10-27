@@ -39,17 +39,10 @@
         {% endif %}
       </div>
     {% endif %}
-    <header class="concepts-header">
-      <div class="container">
-        <h1>{{ section.settings.heading | escape }}</h1>
-        <p>{{ section.settings.intro | escape }}</p>
-      </div>
-    </header>
-
     <section class="concepts-list" aria-labelledby="concepts-list-heading">
       <div class="container">
         <div class="concepts-section-heading">
-          <h2 id="concepts-list-heading">Explore the concepts</h2>
+          <h1 id="concepts-list-heading">Explore the concepts</h1>
           <p>Discover an idea you love, then make it personal.</p>
         </div>
 
@@ -160,10 +153,6 @@
   "name": "Personalization concepts",
   "tag": "section",
   "class": "personalization-concepts-section",
-  "settings": [
-    { "type": "text", "id": "heading", "label": "Page heading", "default": "Personalization Concepts" },
-    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "Explore custom gift ideas and find a starting point for something uniquely yours." }
-  ],
   "blocks": [
     {
       "type": "slide",

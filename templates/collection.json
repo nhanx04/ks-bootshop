@@ -15,8 +15,8 @@
         "slide_btD6eq": {
           "type": "slide",
           "settings": {
-            "img_mobile": "shopify://shop_images/hero_carousel_14_f069ee94-f83c-4d33-9cb0-31f166cecf6a.png",
-            "img_desktop": "shopify://shop_images/hero_carousel_14_f069ee94-f83c-4d33-9cb0-31f166cecf6a.png",
+            "img_mobile": "shopify://shop_images/hero_carousel_19.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_19.png",
             "image_link": "/collections/all",
             "overlay_color": "#000000",
             "overlay_opacity": 0,
@@ -90,8 +90,8 @@
         "slide_7it7Yy": {
           "type": "slide",
           "settings": {
-            "img_mobile": "shopify://shop_images/hero_carousel_16.png",
-            "img_desktop": "shopify://shop_images/hero_carousel_16.png",
+            "img_mobile": "shopify://shop_images/hero_carousel_20.png",
+            "img_desktop": "shopify://shop_images/hero_carousel_20.png",
             "image_link": "/collections/all",
             "overlay_color": "#000000",
             "overlay_opacity": 0,

@@ -1,3 +1,15 @@
+{% assign has_primary_collection_link = false %}
+{% if template.name == 'collection' %}
+  {% for primary_link in linklists[block.settings.main_menu].links %}
+    {% if primary_link.url == collection.url %}
+      {% assign has_primary_collection_link = true %}
+      {% break %}
+    {% elsif primary_link.type == 'collection_link' and primary_link.object.id == collection.id %}
+      {% assign has_primary_collection_link = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 <ul class="nav-desktop-menu nav justify-content-center">
   {% for link in linklists[block.settings.main_menu].links %}
     {% assign menu_handle = link.title | handleize %}
@@ -24,11 +36,15 @@
       {% assign is_collections_link = true %}
     {% endif %}
     {% assign is_mega_active = false %}
-    {% if link.active or link.child_active %}
+    {% if is_collections_link %}
+      {% if request.path == routes.collections_url %}
+        {% assign is_mega_active = true %}
+      {% elsif template.name == 'collection' and has_primary_collection_link == false %}
+        {% assign is_mega_active = true %}
+      {% endif %}
+    {% elsif link.active or link.child_active %}
       {% assign is_mega_active = true %}
     {% elsif is_products_link and template.name == 'product' %}
-      {% assign is_mega_active = true %}
-    {% elsif is_collections_link and template.name == 'collection' and request.path != routes.all_products_collection_url %}
       {% assign is_mega_active = true %}
     {% endif %}
 

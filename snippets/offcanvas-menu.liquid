@@ -6,25 +6,49 @@
   aria-label="{{ 'general.accessibility.menu' | t }}">
   <div class="offcanvas-body">
     {% assign mobile_menu = block.settings.main_menu | default: 'main-menu' %}
+    {% assign has_primary_collection_link = false %}
+    {% if template.name == 'collection' %}
+      {% for primary_link in linklists[mobile_menu].links %}
+        {% if primary_link.url == collection.url %}
+          {% assign has_primary_collection_link = true %}
+          {% break %}
+        {% elsif primary_link.type == 'collection_link' and primary_link.object.id == collection.id %}
+          {% assign has_primary_collection_link = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
     {% if linklists[mobile_menu].links != blank %}
       <ul class="nav accordion-nav mb-9">
         {% for link in linklists[mobile_menu].links %}
+          {% assign is_current_link = link.active %}
+          {% if link.child_active %}
+            {% assign is_current_link = true %}
+          {% endif %}
+          {% if link.type == 'collections_link' or link.url == routes.collections_url %}
+            {% assign is_current_link = false %}
+            {% if request.path == routes.collections_url %}
+              {% assign is_current_link = true %}
+            {% elsif template.name == 'collection' and has_primary_collection_link == false %}
+              {% assign is_current_link = true %}
+            {% endif %}
+          {% endif %}
           {% if link.links == blank %}
             <li class="nav-item">
               <a 
-                class="nav-link {% if link.active %}active{% endif %}" 
+                class="nav-link {% if is_current_link %}active{% endif %}"
                 href="{{ link.url }}" 
-                aria-current="{% if link.active %}page{% endif %}">
+                aria-current="{% if is_current_link %}page{% endif %}">
                 {{ link.title }}
               </a>
             </li>
           {% else %}
             <li class="nav-item collapse-wrapper">
               <a 
-                class="nav-link {% if link.child_active %}active{% endif %}" 
+                class="nav-link {% if is_current_link %}active{% endif %}"
                 href="#offcanvas-menu-collapse-{{ forloop.index }}" 
                 aria-controls="offcanvas-menu-collapse-{{ forloop.index }}"
-                aria-expanded="{% if link.child_active %}true{% else %}false{% endif %}" 
+                aria-expanded="{% if is_current_link %}true{% else %}false{% endif %}"
                 data-bs-toggle="collapse"
                 role="button">
                 {{ link.title }}
@@ -32,7 +56,7 @@
               </a>
               <div 
                 id="offcanvas-menu-collapse-{{ forloop.index }}" 
-                class="collapse {% if link.child_active %}show{% endif %}">
+                class="collapse {% if is_current_link %}show{% endif %}">
                 <ul class="nav flex-column">
                   {% for child_link in link.links %}
                     <li>
