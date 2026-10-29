@@ -1,95 +1,87 @@
-<footer 
-  id="footer" 
-  class="
-    small 
-    {{ section.settings.bg_color }} 
-    {{ section.settings.bg_gradient }}
-    {{ section.settings.text_color }} 
-    {{ section.settings.border_top_width | prepend: 'border-top-' }}
-    {{ section.settings.border_bottom_width | prepend: 'border-bottom-' }}
-    {{ section.settings.border_color }} 
-    {{ section.settings.pt | prepend: 'pt-' }} 
-    {{ section.settings.pb | prepend: 'pb-' }}
-    "
-  style="
-    --bs-bg-opacity: {{ section.settings.bg_opacity | append: '%' }};
-    --bs-border-opacity: {{ section.settings.border_opacity | append: '%' }};
-  ">
+{% assign footer_logo = section.settings.logo | default: settings.logo | default: shop.brand.logo %}
+
+<footer id="footer" class="{{ section.settings.bg_color }} {{ section.settings.bg_gradient }} {{ section.settings.text_color }} {{ section.settings.pt | prepend: 'pt-' }} {{ section.settings.pb | prepend: 'pb-' }}">
   <div class="container">
-    <div
-      id="footer-mobile" 
-      class="d-desktop-none">
-      <div class="mb-8" role="list">
-        {% for block in section.blocks %}
-          <div class="collapse-wrapper" role="listitem" {{ block.shopify_attributes }}>
-            <button
-              id="footer-mobile-collapse-btn-{{ forloop.index }}" 
-              class="heading {{ block.settings.title_font_size }}" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#footer-mobile-collapse-{{ forloop.index }}" 
-              aria-expanded="false" 
-              aria-controls="footer-mobile-collapse-{{ forloop.index }}">
-              {{ block.settings.title }}
-              {% render 'svg-icons', icon: 'chevron-down', size: 18 %}
-            </button>
-            <div id="footer-mobile-collapse-{{ forloop.index }}" class="collapse">
-              <div class="collapse-inner">
-                {% render 'footer-block', block: block %}
-              </div>
+    <div class="footer-main">
+      <div class="footer-signup">
+        <h2 class="footer-heading footer-signup-heading">Stay Connected</h2>
+        <p class="footer-signup-intro">Leave your details and our team will get in touch.</p>
+        {% form 'contact', class: 'footer-signup-form' %}
+          {% if form.posted_successfully? %}
+            <div class="footer-form-success" role="status">Thanks! We have received your details.</div>
+          {% endif %}
+          {% if form.errors %}
+            <div class="footer-form-errors" role="alert">{{ form.errors | default_errors }}</div>
+          {% endif %}
+          <input type="hidden" name="contact[body]" value="Footer signup request">
+          <div class="footer-form-grid">
+            <div class="footer-form-field">
+              <label for="footer-name-{{ section.id }}">Name <span aria-hidden="true">*</span></label>
+              <input id="footer-name-{{ section.id }}" class="form-control" type="text" name="contact[name]" value="{{ form.name | default: customer.name | escape }}" placeholder="Jane Doe" autocomplete="name" required>
             </div>
+            <div class="footer-form-field">
+              <label for="footer-email-{{ section.id }}">E-Mail Address <span aria-hidden="true">*</span></label>
+              <input id="footer-email-{{ section.id }}" class="form-control" type="email" name="contact[email]" value="{{ form.email | default: customer.email | escape }}" placeholder="example@gmail.com" autocomplete="email" required>
+            </div>
+            <div class="footer-form-field">
+              <label for="footer-phone-{{ section.id }}">Phone Number</label>
+              <input id="footer-phone-{{ section.id }}" class="form-control" type="tel" name="contact[phone]" value="{{ customer.phone | escape }}" placeholder="(555) 555-1234" autocomplete="tel">
+            </div>
+            <button class="btn btn-primary footer-submit" type="submit">Send Details</button>
           </div>
-        {% endfor %}
+          <p class="footer-form-privacy">We will only use your details to respond to your request.</p>
+        {% endform %}
       </div>
-    </div>
-    <div 
-      id="footer-desktop" 
-      class="d-none d-desktop-block">
-      <div class="row" role="list">
-        {% for block in section.blocks %}
-          <div class="footer-block col" role="listitem" {{ block.shopify_attributes }}>
-            <h3 class="title {{ block.settings.title_font_size }}">
-              <span>
-                {{ block.settings.title }}
-              </span>
-            </h3>
-            {% render 'footer-block', block: block %}
-          </div>
-        {% endfor %}
+
+      <nav class="footer-service" aria-label="Customer Service">
+        <h2 class="footer-heading">Customer Service</h2>
+        <ul class="footer-link-list">
+          <li><a href="/pages/about-us">About</a></li>
+          <li><a href="/pages/our-story">Our Story</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/shipping-delivery">Shipping &amp; Delivery</a></li>
+          <li><a href="/pages/returns-refunds">Returns &amp; Refunds</a></li>
+          <li><a href="/pages/order-tracking">Order Tracking</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-collections" aria-label="Collections">
+        <h2 class="footer-heading">Collections</h2>
+        {% if section.settings.collection_menu != blank %}
+          <ul class="footer-link-list">
+            {% for link in linklists[section.settings.collection_menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </nav>
+
+      <div id="contact-follow-us" class="footer-contact">
+        <h2 class="footer-heading footer-contact-heading">Contact &amp; Follow Us</h2>
+        <ul class="footer-link-list footer-contact-list">
+          <li><a href="mailto:{{ section.settings.contact_email | escape }}">{% render 'footer-contact-icon', icon: 'mail' %}<span>{{ section.settings.contact_email | escape }}</span></a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61592741266067" target="_blank" rel="noopener noreferrer">{% render 'footer-contact-icon', icon: 'facebook' %}<span>Facebook</span></a></li>
+          <li><a href="https://www.instagram.com/lurevo.studio/" target="_blank" rel="noopener noreferrer">{% render 'footer-contact-icon', icon: 'instagram' %}<span>Instagram</span></a></li>
+          <li><a href="https://www.threads.com/@lurevo.studio" target="_blank" rel="noopener noreferrer">{% render 'footer-contact-icon', icon: 'threads' %}<span>Threads</span></a></li>
+        </ul>
       </div>
-      <hr class="my-8">
     </div>
 
-    <div 
-      id="footer-copyright" 
-      class="">
-      <div class="row align-items-center">
-        <div class="col-desktop-5">
-          {% if section.settings.social_icons %}
-            <div class="social-icons-wrapper text-center text-desktop-start mb-5 mb-desktop-0">
-              {% render 'social-icons', icon_size: 18, show_title: false %}
-            </div>
-          {% endif %}
-        </div>
-        <div class="col-desktop-8">
-          <div class="fs-sm text-center">
-            &copy; {{ 'now' | date: "%Y" }} {{ shop.name | replace: ' (', '<span hidden>' | replace: ')', '</span>' }}.
-            {% if section.settings.show_powered_by %}
-              Theme by <a href="https://www.kondasoft.com" target="_blank" rel="sponsored">KondaSoft</a>,
-              Powered by <a href="https://www.shopify.com" target="_blank" rel="sponsored">Shopify</a>
-            {% endif %}
-          </div>
-        </div>
-        <div class="col-desktop-5">
-          {% if section.settings.show_payment_icons %}
-            <div class="payment-icons-wrapper text-center text-desktop-end mt-5 mt-desktop-0">
-              {% render 'payment-icons' %}
-            </div>
-          {% endif %}
-        </div>
-      </div>
+    <div id="footer-copyright">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}.</p>
+      {% if section.settings.show_payment_icons %}
+        {% render 'payment-icons' %}
+      {% endif %}
     </div>
-    
+  </div>
+  <div class="footer-logo-band {{ section.settings.bg_color }} {{ section.settings.bg_gradient }}">
+    <a class="footer-contact-logo" href="{{ routes.root_url }}">
+      {% if footer_logo != blank %}
+        <img src="{{ footer_logo | image_url: width: 2000 }}" alt="{{ shop.name | escape }}" width="{{ footer_logo.width }}" height="{{ footer_logo.height }}" loading="lazy">
+      {% else %}
+        <span>{{ shop.name | escape }}</span>
+      {% endif %}
+    </a>
   </div>
 </footer>
 
@@ -98,299 +90,28 @@
   "name": "Footer",
   "limit": 1,
   "settings": [
-    {
-      "type": "header",
-      "content": "Styling"
-    },
-    {
-      "type": "select",
-      "id": "bg_color",
-      "label": "Background color",
-      "default": "bg-body",
-      "options": [
-        { "value": "bg-primary", "label": "Primary" },
-        { "value": "bg-secondary", "label": "Secondary" },
-        { "value": "bg-body", "label": "Body" },
-        { "value": "bg-white", "label": "White" }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "bg_opacity",
-      "label": "Background opacity",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 100,
-      "unit": "%"
-    },
-    {
-      "type": "select",
-      "id": "bg_gradient",
-      "label": "Background gradient",
-      "options": [
-        { "value": "bg-gradient", "label": "Yes" },
-        { "value": "", "label": "No" }
-      ],
-      "default": ""
-    },
-    {
-      "type": "select",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "text-body",
-      "options": [
-        { "value": "text-primary", "label": "Primary" },
-        { "value": "text-secondary", "label": "Secondary" },
-        { "value": "text-body", "label": "Body" },
-        { "value": "text-white", "label": "White" }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "border_top_width",
-      "label": "Border top width",
-      "default": 0,
-      "min": 0,
-      "max": 16,
-      "step": 1,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "border_bottom_width",
-      "label": "Border bottom width",
-      "default": 0,
-      "min": 0,
-      "max": 16,
-      "step": 1,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "border_color",
-      "label": "Border color",
-      "default": "border-body",
-      "options": [
-        { "value": "border-primary", "label": "Primary" },
-        { "value": "border-secondary", "label": "Secondary" },
-        { "value": "border-body", "label": "Body" },
-        { "value": "border-white", "label": "White" }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "border_opacity",
-      "label": "Border opacity",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 100,
-      "unit": "%"
-    },
-    {
-      "type": "header",
-      "content": "General"
-    },
-    {
-      "type": "checkbox",
-      "id": "social_icons",
-      "label": "Show social icons in bottom bar",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_payment_icons",
-      "label": "Show payment icons",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_powered_by",
-      "label": "Show powered by",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Spacing"
-    },
-    {
-      "type": "range",
-      "id": "pt",
-      "label": "Top",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "pb",
-      "label": "Bottom",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 10
-    }
+    { "type": "header", "content": "Contact" },
+    { "type": "image_picker", "id": "logo", "label": "Footer logo" },
+    { "type": "text", "id": "contact_email", "label": "Contact email", "default": "hello@lurevo.studio" },
+    { "type": "link_list", "id": "collection_menu", "label": "Collections menu" },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "Show payment icons", "default": true },
+    { "type": "header", "content": "Styling" },
+    { "type": "select", "id": "bg_color", "label": "Background color", "default": "bg-secondary", "options": [
+      { "value": "bg-secondary", "label": "Secondary" },
+      { "value": "bg-body", "label": "Body" },
+      { "value": "bg-white", "label": "White" }
+    ] },
+    { "type": "select", "id": "bg_gradient", "label": "Background gradient", "default": "bg-gradient", "options": [
+      { "value": "bg-gradient", "label": "Yes" },
+      { "value": "", "label": "No" }
+    ] },
+    { "type": "select", "id": "text_color", "label": "Text color", "default": "text-white", "options": [
+      { "value": "text-white", "label": "White" },
+      { "value": "text-body", "label": "Body" }
+    ] },
+    { "type": "range", "id": "pt", "label": "Top spacing", "min": 0, "max": 20, "step": 1, "default": 10 },
+    { "type": "range", "id": "pb", "label": "Bottom spacing", "min": 0, "max": 20, "step": 1, "default": 7 }
   ],
-  "blocks": [
-    {
-      "type": "richtext",
-      "name": "Richtext",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Block Title"
-        },
-        {
-          "type": "select",
-          "id": "title_font_size",
-          "label": "Title",
-          "options": [
-            { "value": "fs-sm", "label": "sm" },
-            { "value": "fs-md", "label": "md" },
-            { "value": "fs-lg", "label": "lg" },
-            { "value": "fs-xl", "label": "xl" },
-            { "value": "fs-xxl", "label": "xxl" }
-          ],
-          "default": "fs-lg",
-          "info": "Only on desktop"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_logo",
-          "label": "Show store logo",
-          "default": false
-        },
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo",
-          "info": "Leave empty to use the theme or store brand logo. A light logo works best on a dark footer."
-        },
-        {
-          "type": "range",
-          "id": "logo_width",
-          "label": "Logo width",
-          "min": 60,
-          "max": 320,
-          "step": 10,
-          "default": 180,
-          "unit": "px"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_social_icons",
-          "label": "Show social icons",
-          "default": false,
-          "info": "Set your account links in Theme settings > Social."
-        },
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description",
-          "default": "<p>Some description for this block</p>"
-        },
-        {
-          "type": "header",
-          "content": "Buttons"
-        },
-        {
-          "type": "text",
-          "id": "btn_primary_text",
-          "label": "Primary button text",
-          "info": "Leave empty to disable"
-        },
-        {
-          "type": "url",
-          "id": "btn_primary_url",
-          "label": "Primary button URL"
-        },
-        {
-          "type": "select",
-          "id": "btn_primary_color",
-          "label": "Primary button color",
-          "default": "btn-primary",
-          "options": [
-            { "group": "Solid", "value": "btn-primary", "label": "Primary" },
-            { "group": "Solid", "value": "btn-secondary", "label": "Secondary" },
-            { "group": "Solid", "value": "btn-white", "label": "White" },
-            { "group": "Light", "value": "btn-light-primary", "label": "Primary" },
-            { "group": "Light", "value": "btn-light-secondary", "label": "Secondary" },
-            { "group": "Light", "value": "btn-light-white", "label": "White" },
-            { "group": "Outline", "value": "btn-outline-primary", "label": "Primary" },
-            { "group": "Outline", "value": "btn-outline-secondary", "label": "Secondary" },
-            { "group": "Outline", "value": "btn-outline-white", "label": "White" }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "btn_secondary_text",
-          "label": "Secondary button text",
-          "info": "Leave empty to disable"
-        },
-        {
-          "type": "url",
-          "id": "btn_secondary_url",
-          "label": "Secondary button URL"
-        },
-        {
-          "type": "select",
-          "id": "btn_secondary_color",
-          "label": "Secondary button color",
-          "default": "btn-secondary",
-          "options": [
-            { "group": "Solid", "value": "btn-primary", "label": "Primary" },
-            { "group": "Solid", "value": "btn-secondary", "label": "Secondary" },
-            { "group": "Solid", "value": "btn-white", "label": "White" },
-            { "group": "Light", "value": "btn-light-primary", "label": "Primary" },
-            { "group": "Light", "value": "btn-light-secondary", "label": "Secondary" },
-            { "group": "Light", "value": "btn-light-white", "label": "White" },
-            { "group": "Outline", "value": "btn-outline-primary", "label": "Primary" },
-            { "group": "Outline", "value": "btn-outline-secondary", "label": "Secondary" },
-            { "group": "Outline", "value": "btn-outline-white", "label": "White" }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "menu",
-      "name": "Menu",
-      "settings": [
-        {
-          "type": "link_list",
-          "id": "menu",
-          "label": "Menu"
-        },
-        {
-          "type": "select",
-          "id": "title_font_size",
-          "label": "Title",
-          "options": [
-            { "value": "fs-sm", "label": "sm" },
-            { "value": "fs-md", "label": "md" },
-            { "value": "fs-lg", "label": "lg" },
-            { "value": "fs-xl", "label": "xl" },
-            { "value": "fs-xxl", "label": "xxl" }
-          ],
-          "default": "fs-lg",
-          "info": "Only on desktop"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Block Title"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Footer"
-    }
-  ]
+  "presets": [{ "name": "Footer" }]
 }
 {% endschema %}

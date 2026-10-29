@@ -46,7 +46,11 @@
     </button>
     <div id="collapse-{{ block.id }}" class="collapse {% if block.settings.open_by_default %}show{% endif %}">
       <div class="collapse-inner description rte mb-0 {{ block.settings.description_font_size }}">
-        {% if block.settings.description contains '[page' %}
+        {% if block.settings.shared_shipping_information %}
+          {% render 'product-shipping-information' %}
+        {% elsif block.settings.shared_returns_information %}
+          {% render 'product-returns-information' %}
+        {% elsif block.settings.description contains '[page' %}
           {% assign page_handle = block.settings.description | split: '[page:' | last | split: ']' | first %}
           {{ pages[page_handle].content }}
         {% elsif block.settings.product_description %}

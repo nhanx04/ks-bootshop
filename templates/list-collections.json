@@ -15,7 +15,7 @@
         "collection_4rgcPa": {
           "type": "collection",
           "settings": {
-            "collection": "personalized-photo-gifts",
+            "collection": "pet-lover-gifts",
             "title": ""
           }
         },
@@ -169,6 +169,7 @@
         "collection_cpLrjy",
         "collection_bVqGf7"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
@@ -234,6 +235,7 @@
         "collection_m4LWcP",
         "collection_Ejn3iV"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "bg-body",
         "bg_opacity": 100,
